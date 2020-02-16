@@ -1,0 +1,21 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install neovim -y'
+  posthook:
+    cmd: 'apt'
+    args: 'install python-neovim python3-neovim -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update -y'
+  main:
+    cmd: 'brew'
+    args: 'install neovim -y'
+windows:
+  main:
+    cmd: 'choco'
+    args: 'install neovim -y'
