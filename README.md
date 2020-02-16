@@ -5,6 +5,9 @@ Cross Platform Dotfiles Manager
 The tools of dotfiles for cross-platform.
 Currently, supported Linux, MacOS, and Windows.
 
+This project is distributed under the MIT License, see LICENSE.
+However, all files under `dotfiles/` are not licensed.
+
 ## Getting Started
 
 - General
