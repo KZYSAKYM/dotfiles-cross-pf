@@ -1,0 +1,18 @@
+linux:
+  main:
+    cmd: 'git'
+    args: 'clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto'
+  posthook:
+    cmd: 'for'
+    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+mac:
+  main:
+    cmd: 'git'
+    args: 'clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto'
+  posthook:
+    cmd: 'for'
+    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'No support for zsh'

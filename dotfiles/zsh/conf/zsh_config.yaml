@@ -1,0 +1,14 @@
+linux:
+  prehook:
+    cmd: 'for'
+    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+  main:
+    cmd: 'cp'
+    args: 'z* ~/.zprezto/runcoms'
+mac:
+  prehook:
+    cmd: 'for'
+    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+  main:
+    cmd: 'cp'
+    args: 'z* ~/.zprezto/runcoms'

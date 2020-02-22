@@ -1,0 +1,15 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install language-pack-ja fcitx-mozc -y'
+mac:
+  main:
+    cmd: 'echo'
+    args: 'No Support'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'No Support'

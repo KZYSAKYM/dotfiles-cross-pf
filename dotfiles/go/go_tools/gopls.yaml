@@ -1,0 +1,3 @@
+main:
+  cmd: 'go'
+  args: 'get golang.org/x/tools/gopls'

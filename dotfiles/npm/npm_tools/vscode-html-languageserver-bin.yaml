@@ -1,0 +1,3 @@
+main:
+  cmd: 'npm'
+  args: 'install -g vscode-html-languageserver-bin'

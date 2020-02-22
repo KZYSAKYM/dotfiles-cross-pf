@@ -1,0 +1,6 @@
+prehook:
+  cmd: 'rustup'
+  args: 'update'
+main:
+  cmd: 'rustup'
+  args: 'component add rust-src'

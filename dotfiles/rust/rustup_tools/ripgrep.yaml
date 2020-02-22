@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install ripgrep -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update -y'
+  main:
+    cmd: 'brew'
+    args: 'install ripgrep -y'
+windows:
+  main:
+    cmd: 'choco'
+    args: 'install ripgrep -y'

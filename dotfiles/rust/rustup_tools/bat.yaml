@@ -1,0 +1,3 @@
+main:
+  cmd: 'cargo'
+  args: 'install bat'

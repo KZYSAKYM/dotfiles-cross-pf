@@ -1,0 +1,27 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install fonts-powerline -y'
+mac:
+  prehook:
+    cmd: 'git'
+    args: 'clone https://github.com/powerline/fonts.git --depth=1'
+  main:
+    cmd: './fonts/install.sh'
+    args: ''
+  posthook:
+    cmd: 'rm'
+    args: '-rf fonts'
+windows:
+  prehook:
+    cmd: 'git'
+    args: 'clone https://github.com/powerline/fonts.git --depth=1'
+  main:
+    cmd: '.\\fonts\install.ps1'
+    args: ''
+  posthook:
+    cmd: 'Remove-Item'
+    args: '-Recurse -Force fonts'

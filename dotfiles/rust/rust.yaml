@@ -1,0 +1,30 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'install curl -y'
+  main:
+    cmd: 'curl'
+    args: '--proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
+  posthook:
+    cmd: 'apt'
+    args: 'install libz-dev cmake libclang-dev -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'install curl -y'
+  main:
+    cmd: 'curl'
+    args: '--proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
+  posthook:
+    cmd: 'brew'
+    args: 'install libz-dev cmake libclang-dev -y'
+windows:
+  prehook:
+    cmd: 'wget'
+    args: 'https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe -UseBasicParsing -O rustup-init.exe'
+  main:
+    cmd: '.\\rustup-init.exe'
+    args: ''
+  posthook:
+    cmd: 'echo'
+    args: 'Please install VSCode Build Tools from https://aka.ms/vs/19/release/vs_buildtools.exe & https://github.com/Microsoft/vscode-cpptools/releases'

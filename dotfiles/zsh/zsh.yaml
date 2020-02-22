@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install zsh -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update -y'
+  main:
+    cmd: 'brew'
+    args: 'install zsh -y'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'No support for zsh'
