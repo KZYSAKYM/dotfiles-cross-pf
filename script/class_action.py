@@ -19,11 +19,12 @@ TypeFlow = TypeVar('{"prehook": {"cmd": [str], "args": [str]}, '
 
 
 class Cmd(class_base.ProjectBase):
-    def __init__(self, configs: TypeConfig,
+    def __init__(self, configs: TypeConfig, workdir: str,
                  stdout=sys.stdout, stderr=sys.stderr,
                  indent=4, width=80, compact=False):
         super().__init__(stdout, stderr, indent, width, compact)
         self.configs = configs
+        self.workdir = workdir if os.path.isdir(workdir) else None
 
     def execute(self) -> bool:
         flow: TypeFlow = self.parse()
@@ -47,7 +48,7 @@ class Cmd(class_base.ProjectBase):
         proc = subprocess.run([*flow[part]['cmd'], *flow[part]['args']],
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE,
-                              encoding='utf-8', shell=True)
+                              encoding='utf-8', cwd=self.workdir, shell=True)
         if proc.returncode != 0:
             self.print_err(
                 '[ERROR: %s: %s] return with %d' % (
