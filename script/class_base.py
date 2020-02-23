@@ -12,6 +12,8 @@ import main
 class ProjectBase:
     def __init__(self, stdout: object = sys.stdout, stderr: object = sys.stderr,
                  indent: int = 4, width: int = 80, compact: bool = False) -> object:
+        self.pp = pprint.PrettyPrinter(
+                indent=indent, width=width, compact=compact)
         self.stdout = stdout
         self.stderr = stderr
         self.indent = indent
@@ -31,16 +33,28 @@ class ProjectBase:
 
     def print_out(self, o: object, depth: int = 0) -> None:
         o = self.recursive_eval(o)
-        pprint.pprint(str(o).encode('utf-8'), self.stdout, indent=self.indent,
-                      width=self.width, depth=depth + 1, compact=self.compact)
+        lines = eval(pprint.pformat(o,
+                    indent=self.indent,
+                    width=self.width, depth=depth + 1, compact=self.compact
+                )).split('\n')
+        for line in lines:
+            print("%s" % line, file=self.stdout)
 
     def print_err(self, o: object, depth: int = 0) -> None:
         o = self.recursive_eval(o)
-        pprint.pprint(str(o).encode('utf-8'), self.stderr, indent=self.indent,
-                      width=self.width, depth=depth + 1, compact=self.compact)
+        lines = eval(pprint.pformat(o,
+                    indent=self.indent,
+                    width=self.width, depth=depth + 1, compact=self.compact
+                )).split('\n')
+        for line in lines:
+            print("%s" % line, file=self.stderr)
 
     def print_debug(self, o: object, depth: int = 0) -> None:
         if main.DEBUG:
             o = self.recursive_eval(o)
-            pprint.pprint(str(o).encode('utf-8'), self.stdout, indent=self.indent,
-                          width=self.width, depth=depth + 1, compact=self.compact)
+            lines = pprint.pformat(o,
+                        indent=self.indent,
+                        width=self.width, depth=depth + 1, compact=self.compact
+                    ).split('\n')
+            for line in lines:
+                print("%s" % line, file=self.stderr)
