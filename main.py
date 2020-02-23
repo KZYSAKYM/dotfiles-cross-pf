@@ -6,7 +6,7 @@ import sys
 from script import class_parser
 sys.path.append(os.path.join(os.path.dirname(__file__), '.'))
 
-DEBUG: bool = True
+DEBUG: bool = False
 
 if __name__ == "__main__":
     dotfiles_parser = class_parser.Parser()

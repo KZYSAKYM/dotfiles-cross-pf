@@ -1,6 +1,21 @@
-main:
-  cmd: 'cp'
-  args: '../../config/vim/init.vim ~/.vimrc'
-posthook:
-  cmd: 'cp'
-  args: '../../config/vim/*.toml ~'
+linux:
+  main:
+    cmd: 'cp'
+    args: '../../config/vim/init.vim ~/.vimrc'
+  posthook:
+    cmd: 'cp'
+    args: '../../config/vim/*.toml ~'
+mac:
+  main:
+    cmd: 'cp'
+    args: '../../config/vim/init.vim ~/.vimrc'
+  posthook:
+    cmd: 'cp'
+    args: '../../config/vim/*.toml ~'
+windows:
+  main:
+    cmd: 'cp'
+    args: '..\..\config\vim\init.vim ..\..\..\.vimrc'
+  posthook:
+    cmd: 'cp'
+    args: '..\..\config\vim\*.toml ..\..\..'

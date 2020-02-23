@@ -14,5 +14,5 @@ mac:
     args: 'install openssh-server openssh-client -y'
 windows:
   main:
-    cmd: 'choco'
-    args: 'install openssh-server openssh-client -y'
+    cmd: 'echo'
+    args: 'no support'

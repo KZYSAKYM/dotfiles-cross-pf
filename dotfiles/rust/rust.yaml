@@ -21,10 +21,10 @@ mac:
 windows:
   prehook:
     cmd: 'wget'
-    args: 'https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe -UseBasicParsing -O rustup-init.exe'
+    args: 'https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe -UseBasicParsing -O ..\..\..\rustup-init.exe'
   main:
-    cmd: '.\\rustup-init.exe'
-    args: ''
+    cmd: 'echo'
+    args: 'Please Execute ..\..\..\rustup-init.exe -y'
   posthook:
     cmd: 'echo'
-    args: 'Please install VSCode Build Tools from https://aka.ms/vs/19/release/vs_buildtools.exe & https://github.com/Microsoft/vscode-cpptools/releases'
+    args: 'Please install VSCode Build Tools from https://aka.ms/vs/19/release/vs_buildtools.exe and https://github.com/Microsoft/vscode-cpptools/releases'

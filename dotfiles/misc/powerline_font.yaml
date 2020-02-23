@@ -8,20 +8,17 @@ linux:
 mac:
   prehook:
     cmd: 'git'
-    args: 'clone https://github.com/powerline/fonts.git --depth=1'
+    args: 'clone https://github.com/powerline/fonts.git --depth=1 ~'
   main:
-    cmd: './fonts/install.sh'
+    cmd: '~/fonts/install.sh'
     args: ''
   posthook:
     cmd: 'rm'
-    args: '-rf fonts'
+    args: '-rf ~/fonts'
 windows:
   prehook:
     cmd: 'git'
-    args: 'clone https://github.com/powerline/fonts.git --depth=1'
+    args: 'clone https://github.com/powerline/fonts.git --depth=1 ..\..\..\fonts'
   main:
-    cmd: '.\\fonts\install.ps1'
-    args: ''
-  posthook:
-    cmd: 'Remove-Item'
-    args: '-Recurse -Force fonts'
+    cmd: 'echo'
+    args: 'Please Execute ..\..\..\fonts\install.ps1'

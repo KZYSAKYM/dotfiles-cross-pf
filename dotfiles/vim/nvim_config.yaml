@@ -1,9 +1,30 @@
-prehook:
-  cmd: 'mkdir'
-  args: '-p ~/.config/nvim'
-main:
-  cmd: 'cp'
-  args: '../../config/vim/init.vim ~/.config/nvim/init.vim'
-posthook:
-  cmd: 'cp'
-  args: '../../config/vim/*.toml ~/.config/nvim'
+linux:
+  prehook:
+    cmd: 'mkdir'
+    args: '-p ~/.config/nvim'
+  main:
+    cmd: 'cp'
+    args: '../../config/vim/init.vim ~/.config/nvim/init.vim'
+  posthook:
+    cmd: 'cp'
+    args: '../../config/vim/*.toml ~/.config/nvim'
+mac:
+  prehook:
+    cmd: 'mkdir'
+    args: '-p ~/.config/nvim'
+  main:
+    cmd: 'cp'
+    args: '../../config/vim/init.vim ~/.config/nvim/init.vim'
+  posthook:
+    cmd: 'cp'
+    args: '../../config/vim/*.toml ~/.config/nvim'
+windows:
+  prehook:
+    cmd: 'mkdir'
+    args: '-p ..\..\..\.config\nvim'
+  main:
+    cmd: 'cp'
+    args: '..\..\config\vim\init.vim ..\..\..\.config\nvim\init.vim'
+  posthook:
+    cmd: 'cp'
+    args: '..\..\config\vim\*.toml ..\..\..\.config\nvim'

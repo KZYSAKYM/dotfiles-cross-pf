@@ -1,6 +1,21 @@
-prehook:
-  cmd: '~/.cargo/bin/rustup'
-  args: 'update'
-main:
-  cmd: '~/.cargo/bin/rustup'
-  args: 'component add rust-src'
+linux:
+  prehook:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'update'
+  main:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'component add rust-src'
+mac:
+  prehook:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'update'
+  main:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'component add rust-src'
+windows:
+  prehook:
+    cmd: 'rustup'
+    args: 'update'
+  main:
+    cmd: 'rustup'
+    args: 'component add rust-src'

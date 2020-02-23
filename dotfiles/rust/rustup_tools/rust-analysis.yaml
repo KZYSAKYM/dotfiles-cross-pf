@@ -1,6 +1,21 @@
-prehook:
-  cmd: '~/.cargo/bin/rustup'
-  args: 'update'
-main:
-  cmd: '~/.cargo/bin/rustup'
-  args: 'component add rust-analysis'
+linux:
+  prehook:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'update'
+  main:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'component add rust-analysis'
+mac:
+  prehook:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'update'
+  main:
+    cmd: '~/.cargo/bin/rustup'
+    args: 'component add rust-analysis'
+windows:
+  prehook:
+    cmd: 'rustup'
+    args: 'update'
+  main:
+    cmd: 'rustup'
+    args: 'component add rust-analysis'
