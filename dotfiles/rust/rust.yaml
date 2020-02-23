@@ -1,23 +1,23 @@
 linux:
   prehook:
     cmd: 'apt'
-    args: 'install curl -y'
+    args: 'update -y'
   main:
-    cmd: 'curl'
-    args: '--proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
-  posthook:
     cmd: 'apt'
-    args: 'install libz-dev cmake libclang-dev -y'
+    args: 'install curl libz-dev cmake libclang-dev rustc cargo -y'
+  posthook:
+    cmd: 'curl'
+    args: 'https://sh.rustup.rs -sSf | sh -s -- -y'
 mac:
   prehook:
     cmd: 'brew'
-    args: 'install curl -y'
+    args: 'update -y'
   main:
-    cmd: 'curl'
-    args: '--proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
-  posthook:
     cmd: 'brew'
-    args: 'install libz-dev cmake libclang-dev -y'
+    args: 'install curl libz-dev cmake libclang-dev rustc cargo -y'
+  posthook:
+    cmd: 'curl'
+    args: 'https://sh.rustup.rs -sSf | sh -s -- -y'
 windows:
   prehook:
     cmd: 'wget'

@@ -4,14 +4,14 @@ linux:
     args: 'update -y'
   main:
     cmd: 'apt'
-    args: 'install autoconf automake autotools-dev binutils m4 build-essential cmake cscope ctags gcc-aarch64-linux-gnu highlight screen tcpdump'
+    args: 'install autoconf automake autotools-dev binutils m4 build-essential cmake cscope ctags gcc-aarch64-linux-gnu highlight screen tcpdump -y'
 mac:
   prehook:
     cmd: 'xcode-select'
     args: '--install'
   main:
     cmd: 'echo'
-    args: 'install autoconf automake libtool binutils highlight screen tcpdump cmake cscope ctags'
+    args: 'install autoconf automake libtool binutils highlight screen tcpdump cmake cscope ctags -y'
 windows:
   main:
     cmd: 'echo'

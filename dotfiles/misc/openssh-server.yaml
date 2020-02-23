@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'apt'
+    args: 'update -y'
+  main:
+    cmd: 'apt'
+    args: 'install openssh-server openssh-client -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update -y'
+  main:
+    cmd: 'brew'
+    args: 'install openssh-server openssh-client -y'
+windows:
+  main:
+    cmd: 'choco'
+    args: 'install openssh-server openssh-client -y'

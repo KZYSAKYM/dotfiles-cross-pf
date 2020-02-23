@@ -4,11 +4,15 @@ linux:
     args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
   main:
     cmd: 'cp'
-    args: 'z* ~/.zprezto/runcoms'
+    args: '~/MyMemo/zsh/zprezto/z* ~/.zprezto/runcoms'
 mac:
   prehook:
     cmd: 'for'
     args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
   main:
     cmd: 'cp'
-    args: 'z* ~/.zprezto/runcoms'
+    args: '~/MyMemo/zsh/zprezto/z* ~/.zprezto/runcoms'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'no support'

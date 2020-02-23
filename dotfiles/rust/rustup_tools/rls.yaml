@@ -1,6 +1,6 @@
 prehook:
-  cmd: 'rustup'
+  cmd: '~/.cargo/bin/rustup'
   args: 'update'
 main:
-  cmd: 'rustup'
+  cmd:  '~/.cargo/bin/rustup'
   args: 'component add rls'
