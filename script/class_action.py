@@ -54,8 +54,14 @@ class Cmd(class_base.ProjectBase):
                 '[ERROR: %s: %s] return with %d' % (
                     part, ' '.join([*flow[part]['cmd'], *flow[part]['args']]),
                     proc.returncode))
-        self.print_out('%s' % proc.stdout.decode('utf-8'), 1)
-        self.print_err('%s' % proc.stderr.decode('utf-8'), 1)
+        try:
+            self.print_out('%s' % proc.stdout.decode('utf-8'), 1)
+        except:
+            self.print_out('%s' % proc.stdout.decode('shift-jis'), 1)
+        try:
+            self.print_err('%s' % proc.stderr.decode('utf-8'), 1)
+        except:
+            self.print_err('%s' % proc.stderr.decode('shift-jis'), 1)
 
     def parse(self) -> TypeFlow:
         flow: Any = {}
