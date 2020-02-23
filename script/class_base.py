@@ -23,7 +23,7 @@ class ProjectBase:
         if pprint.isreadable(o):
             try:
                 ret = self.recursive_eval(eval(o))
-            except SyntaxError:
+            except Exception:
                 ret = o
         else:
             ret = o
@@ -31,16 +31,16 @@ class ProjectBase:
 
     def print_out(self, o: object, depth: int = 0) -> None:
         o = self.recursive_eval(o)
-        pprint.pprint(o, self.stdout, indent=self.indent,
+        pprint.pprint(str(o).encode('utf-8'), self.stdout, indent=self.indent,
                       width=self.width, depth=depth + 1, compact=self.compact)
 
     def print_err(self, o: object, depth: int = 0) -> None:
         o = self.recursive_eval(o)
-        pprint.pprint(o, self.stderr, indent=self.indent,
+        pprint.pprint(str(o).encode('utf-8'), self.stderr, indent=self.indent,
                       width=self.width, depth=depth + 1, compact=self.compact)
 
     def print_debug(self, o: object, depth: int = 0) -> None:
         if main.DEBUG:
             o = self.recursive_eval(o)
-            pprint.pprint(o, self.stdout, indent=self.indent,
+            pprint.pprint(str(o).encode('utf-8'), self.stdout, indent=self.indent,
                           width=self.width, depth=depth + 1, compact=self.compact)

@@ -45,7 +45,7 @@ class Cmd(class_base.ProjectBase):
     def _execute(self, part: str, flow: TypeFlow):
         self.print_out("[EXEC: %s] %s" % (
             part, ' '.join([*flow[part]['cmd'], *flow[part]['args']])))
-        proc = subprocess.run([*flow[part]['cmd'], *flow[part]['args']],
+        proc = subprocess.run(" ".join([*flow[part]['cmd'], *flow[part]['args']]),
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE,
                               encoding='utf-8', cwd=self.workdir, shell=True)
