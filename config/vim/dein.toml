@@ -1,0 +1,60 @@
+# Required:
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Basic Utility
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
+# :Template
+
+# Git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# Color/Theme
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# Ranger
+[[plugins]]
+repo = 'rbgrouleff/bclose.vim'
+
+[[plugins]]
+repo = 'iberianpig/ranger-explorer.vim'
+
+[[plugins]]
+repo = 'francoiscabrol/ranger.vim'
+
+# Language Server
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+# Language Support
+[[plugins]]
+repo = 'osyo-manga/vim-watchdogs'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'

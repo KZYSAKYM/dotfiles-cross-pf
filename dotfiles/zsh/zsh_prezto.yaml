@@ -1,17 +1,23 @@
 linux:
-  main:
+  prehook:
     cmd: 'git'
     args: 'clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto'
-  posthook:
+  main:
     cmd: 'for'
-    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+    args: 'rc in zlogin zlogout zpreztorc zprofile zshenv zshrc; do ln -s ~/.zprezto/runcoms/$rc ~/.$rc; done'
+  posthook:
+    cmd: 'mkdir'
+    args: '~/.zprezto-contrib'
 mac:
-  main:
+  prehook:
     cmd: 'git'
     args: 'clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto'
-  posthook:
+  main:
     cmd: 'for'
-    args: 'rc in ~/.zprezto/runcoms/^README.md(.N); do ln -s $rc ~/.$rc; done'
+    args: 'rc in zlogin zlogout zpreztorc zprofile zshenv zshrc; do ln -s ~/.zprezto/runcoms/$rc ~/.$rc; done'
+  posthook:
+    cmd: 'mkdir'
+    args: '~/.zprezto-contrib'
 windows:
   main:
     cmd: 'echo'

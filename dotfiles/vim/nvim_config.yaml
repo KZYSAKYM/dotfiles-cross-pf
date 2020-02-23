@@ -1,2 +1,9 @@
-cmd: 'echo'
-args: 'No supported'
+prehook:
+  cmd: 'mkdir'
+  args: '-p ~/.config/nvim'
+main:
+  cmd: 'cp'
+  args: '../../config/vim/init.vim ~/.config/nvim/init.vim'
+posthook:
+  cmd: 'cp'
+  args: '../../config/vim/*.toml ~/.config/nvim'
