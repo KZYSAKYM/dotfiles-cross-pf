@@ -48,7 +48,7 @@ class Cmd(class_base.ProjectBase):
         proc = subprocess.run(" ".join([*flow[part]['cmd'], *flow[part]['args']]),
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE,
-                              encoding='utf-8', cwd=self.workdir, shell=True)
+                              cwd=self.workdir, shell=True)
         if proc.returncode != 0:
             self.print_err(
                 '[ERROR: %s: %s] return with %d' % (
