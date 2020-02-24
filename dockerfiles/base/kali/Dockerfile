@@ -2,7 +2,7 @@ FROM kalilinux/kali
 
 MAINTAINER KZYSAKYM
 
-EXPOSE 20 21 22
+EXPOSE 20 21 22 80 8080 8888
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&  \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
