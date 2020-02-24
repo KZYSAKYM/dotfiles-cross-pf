@@ -25,9 +25,11 @@ alias _ls="/bin/ls"
 alias _cat="/bin/cat"
 alias b="cd ./../.."
 
+export RANGER_BIN=$(which ranger)
+
 ranger() {
 	if [ -z $RANGER_LEVEL ]; then
-		/usr/bin/ranger $@
+		$RANGER_BIN $@
 	else
 		exit
 	fi
