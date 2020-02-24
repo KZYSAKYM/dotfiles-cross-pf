@@ -1,0 +1,16 @@
+ # kali
+ version: '3'
+ services:
+   kali:
+     image: kali_base:latest
+     container_name: kali
+     volumes:
+       - <path/to/your/shared/dir>:/home/develop/work
+     ports:
+       - "50020:20"
+       - "50021:21"
+       - "50022:22"
+       - "50080:80"
+       - "58000:8000"
+       - "58888:8888"
+       - "58080:8080"

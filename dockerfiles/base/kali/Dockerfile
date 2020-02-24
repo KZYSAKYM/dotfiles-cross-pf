@@ -44,6 +44,17 @@ RUN ./install.sh
 RUN printf "password\npassword\n" | passwd develop
 RUN usermod -aG sudo develop
 
+# For SSH
+RUN mkdir /var/run/sshd
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN echo '[ "$(ps aux | grep sshd)" ] || nohup /usr/sbin/sshd -D &' >> /etc/profile
+# For sudo bug fix
+RUN echo "Set disable_coredump false" > /etc/sudo.conf
+
+# For Shared Volume
+RUN mkdir /home/develop/work
+VOLUME /home/develop/work
+
 RUN chown -R develop:develop /home/develop
 
-ENTRYPOINT /bin/su - develop
+ENTRYPOINT /usr/sbin/sshd -D
