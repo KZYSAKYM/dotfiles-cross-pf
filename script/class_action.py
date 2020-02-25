@@ -45,7 +45,13 @@ class Cmd(class_base.ProjectBase):
     def _execute(self, part: str, flow: TypeFlow):
         self.print_out("[EXEC: %s] %s" % (
             part, ' '.join([*flow[part]['cmd'], *flow[part]['args']])))
-        proc = subprocess.run(" ".join([*flow[part]['cmd'], *flow[part]['args']]),
+        if sys.platform == 'win32':
+            proc = subprocess.run("powershell " + " ".join([*flow[part]['cmd'], *flow[part]['args']]),
+                              stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE,
+                              cwd=self.workdir, shell=True)
+        else:
+            proc = subprocess.run(" ".join([*flow[part]['cmd'], *flow[part]['args']]),
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE,
                               cwd=self.workdir, shell=True)
@@ -78,6 +84,5 @@ class Cmd(class_base.ProjectBase):
             flow = self.configs
 
         return flow
-
 
 TypeAction = TypeVar('Cmd', bound=Cmd)
