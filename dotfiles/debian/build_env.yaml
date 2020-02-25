@@ -1,9 +1,9 @@
 linux:
   prehook:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'install autoconf automake autotools-dev binutils m4 build-essential cmake cscope ctags gcc-aarch64-linux-gnu highlight screen tcpdump -y'
 mac:
   prehook:

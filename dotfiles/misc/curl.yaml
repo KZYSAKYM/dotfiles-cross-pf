@@ -1,9 +1,9 @@
 linux:
   prehook:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'install curl -y'
 mac:
   prehook:

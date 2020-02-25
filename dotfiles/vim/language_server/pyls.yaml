@@ -1,9 +1,9 @@
 linux:
   prehook:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt'
+    cmd: 'apt-get'
     args: 'install python3-pip -y'
   posthook:
     cmd: 'pip3'
