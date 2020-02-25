@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'apt-get'
+    args: 'update -y'
+  main:
+    cmd: 'apt-get'
+    args: 'install fd-find'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update -y'
+  main:
+    cmd: 'brew'
+    args: 'install fd -y'
+windows:
+  main:
+    cmd: 'choco'
+    args: 'install fd'
