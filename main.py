@@ -11,7 +11,7 @@ DEBUG: bool = False
 if __name__ == "__main__":
     dotfiles_parser = class_parser.Parser()
     dotfiles = os.path.abspath(os.path.dirname(__file__))
-    homedir = os.environ.get('HOME')
+    homedir = os.path.expanduser('~')
     os.environ['TOP_DIR'] = dotfiles
     if sys.platform == 'win32':
         os.environ['DOT_DIR'] = dotfiles + '\\dotfiles'
