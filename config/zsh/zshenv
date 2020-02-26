@@ -43,8 +43,6 @@ source $HOME/.cargo/env
 # Git
 
 export GIT_EDITOR='nvim'
-export GIT_AUTHOR_NAME='KZYSAKYM'
-export GIT_AUTHOR_EMAIL='akiyama.kazuyoshi.64w@gmail.com'
 
 # Localization
 
