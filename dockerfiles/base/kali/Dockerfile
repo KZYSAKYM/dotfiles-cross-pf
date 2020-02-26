@@ -14,7 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update &&  \
     python3-pip \
     locales     \
     && pip3 install pyyaml  \
-    && echo "en_US.UTF-8" > /etc/locale.gen    \
+    && echo "en_US UTF-8" > /etc/locale.gen    \
     && locale-gen
 
 RUN adduser develop \

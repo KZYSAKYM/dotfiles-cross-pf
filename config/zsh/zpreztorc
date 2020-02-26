@@ -25,7 +25,7 @@ zstyle ':prezto:load' zmodule 'attr' 'stat'
 zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 get_github_module() {
-    if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto-contrib/module/$1 ]]; then
+    if ! [ -d ${ZDOTDIR:-$HOME}/.zprezto-contrib/$1 ]; then
         git clone https://github.com/$2 ${ZDOTDIR:-$HOME}/.zprezto-contrib/$1
     fi
 }
@@ -40,13 +40,22 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'syntax-highlighting' \
   'history' \
+  'history-substring-search' \
+  'autosuggestions' \
   'directory' \
   'spectrum' \
   'utility' \
   'completion' \
   'prompt' \
+  'command-not-found' \
   'enhancd'
+
+# enhancd
+export ENHANCD_DOT_ARG="^"
+export ENHANCD_HOME_ARG=""
+export ENHANCD_DISABLE_HOME=1
 
 #
 # Autosuggestions
@@ -95,13 +104,13 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # macOS

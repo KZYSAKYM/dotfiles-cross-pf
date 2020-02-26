@@ -13,19 +13,28 @@ fi
 # Alias
 
 alias ls='exa'
+alias ll='exa -alF'
+alias la='exa -a'
+alias l='exa -F'
+alias tree='exa --tree'
 alias cat='bat -p'
-alias ll='ls -alF'
-alias la='ls -a'
-alias l='ls -CF'
 alias vim='nvim'
 alias v='nvim'
+alias ps='procs'
 
 alias _vim="/usr/bin/vim"
 alias _ls="/bin/ls"
 alias _cat="/bin/cat"
 alias b="cd ./../.."
+alias __ps='/bin/ps'
+
+if [ "$(uname | grep Linux)" ]; then
+	alias fd="fdfind"
+fi
 
 export RANGER_BIN=$(which ranger)
+
+# Functions
 
 ranger() {
 	if [ -z $RANGER_LEVEL ]; then
@@ -35,9 +44,31 @@ ranger() {
 	fi
 }
 
+fdrg() {
+	suffix="$1"
+	keyword="$2"
+	fd $suffix | xargs rg $keyword
+}
+
+convert_suffix() {
+	before_suffix="$1"
+	after_suffix="$2"
+	fd $before_suffix --exec mv {} {.}$after_suffix \;
+}
+
+rgexec() {
+	pattern="$1"
+	dst_dir="$2"
+	func="$3"
+	for i in `rg $pattern $dst_dir -l`; do
+		$func $i
+	done
+}
+
 # PATH
 
-export PATH=$HOME/.local/bin:$PATH
+export GOPATH=$HOME/.go
+export PATH=$HOME/.local/bin:$GOPATH:$PATH
 source $HOME/.cargo/env
 
 # Git

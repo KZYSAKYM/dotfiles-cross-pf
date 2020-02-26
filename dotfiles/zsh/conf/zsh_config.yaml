@@ -1,11 +1,11 @@
 linux:
   main:
     cmd: 'cp'
-    args: '../../../config/zsh/z* ~/.zprezto/runcoms'
+    args: '$CONF_DIR/zsh/z* $HOME/.zprezto/runcoms'
 mac:
   main:
     cmd: 'cp'
-    args: '../../../config/zsh/z* ~/.zprezto/runcoms'
+    args: '$CONF_DIR/config/zsh/z* $HOME/.zprezto/runcoms'
 windows:
   main:
     cmd: 'echo'

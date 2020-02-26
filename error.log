@@ -1,0 +1,761 @@
+
+
+
+
+
+
+
+
+creating: /root/.config/ranger/rifle.conf
+creating: /root/.config/ranger/commands.py
+creating: /root/.config/ranger/commands_full.py
+creating: /root/.config/ranger/rc.conf
+creating: /root/.config/ranger/scope.sh
+
+> Please note that configuration files may change as ranger evolves.
+  It's completely up to you to keep them up to date.
+
+> To stop ranger from loading [1mboth[0m the default and your custom rc.conf,
+  please set the environment variable [1mRANGER_LOAD_DEFAULT_RC[0m to [1mFALSE[0m.
+
+
+
+[ERROR: posthook: add-apt-repository ppa:neovim-ppa/stable -y] return with 1
+Traceback (most recent call last):
+  File "/usr/bin/add-apt-repository", line 95, in <module>
+    sp = SoftwareProperties(options=options)
+  File "/usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py", line 109, in __init__
+    self.reload_sourceslist()
+  File "/usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py", line 599, in reload_sourceslist
+    self.distro.get_sources(self.sourceslist)    
+  File "/usr/lib/python3/dist-packages/aptsources/distro.py", line 93, in get_sources
+    (self.id, self.codename))
+aptsources.distro.NoDistroTemplateException: Error: could not find a distribution template for Kali/kali-rolling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ERROR: posthook: apt-get install python-neovim python3-neovim -y] return with 100
+E: Unable to locate package python-neovim
+
+
+
+
+
+
+Cloning into '/root/.zprezto'...
+Submodule 'modules/autosuggestions/external' (https://github.com/zsh-users/zsh-autosuggestions.git) registered for path 'modules/autosuggestions/external'
+Submodule 'modules/completion/external' (https://github.com/zsh-users/zsh-completions.git) registered for path 'modules/completion/external'
+Submodule 'modules/fasd/external' (https://github.com/clvv/fasd.git) registered for path 'modules/fasd/external'
+Submodule 'modules/history-substring-search/external' (https://github.com/zsh-users/zsh-history-substring-search.git) registered for path 'modules/history-substring-search/external'
+Submodule 'modules/prompt/external/agnoster' (https://github.com/agnoster/agnoster-zsh-theme.git) registered for path 'modules/prompt/external/agnoster'
+Submodule 'modules/prompt/external/async' (https://github.com/mafredri/zsh-async.git) registered for path 'modules/prompt/external/async'
+Submodule 'modules/prompt/external/powerlevel10k' (https://github.com/romkatv/powerlevel10k.git) registered for path 'modules/prompt/external/powerlevel10k'
+Submodule 'modules/prompt/external/powerlevel9k' (https://github.com/bhilburn/powerlevel9k.git) registered for path 'modules/prompt/external/powerlevel9k'
+Submodule 'modules/prompt/external/powerline' (https://github.com/davidjrice/prezto_powerline.git) registered for path 'modules/prompt/external/powerline'
+Submodule 'modules/prompt/functions/pure' (https://github.com/sindresorhus/pure.git) registered for path 'modules/prompt/external/pure'
+Submodule 'modules/syntax-highlighting/external' (https://github.com/zsh-users/zsh-syntax-highlighting.git) registered for path 'modules/syntax-highlighting/external'
+Cloning into '/root/.zprezto/modules/autosuggestions/external'...
+Cloning into '/root/.zprezto/modules/completion/external'...
+Cloning into '/root/.zprezto/modules/fasd/external'...
+Cloning into '/root/.zprezto/modules/history-substring-search/external'...
+Cloning into '/root/.zprezto/modules/prompt/external/agnoster'...
+Cloning into '/root/.zprezto/modules/prompt/external/async'...
+Cloning into '/root/.zprezto/modules/prompt/external/powerlevel10k'...
+Cloning into '/root/.zprezto/modules/prompt/external/powerlevel9k'...
+Cloning into '/root/.zprezto/modules/prompt/external/powerline'...
+Cloning into '/root/.zprezto/modules/prompt/external/pure'...
+Cloning into '/root/.zprezto/modules/syntax-highlighting/external'...
+Submodule 'shunit2' (https://github.com/kward/shunit2.git) registered for path 'modules/prompt/external/powerlevel9k/shunit2'
+Cloning into '/root/.zprezto/modules/prompt/external/powerlevel9k/shunit2'...
+
+
+
+
+
+
+
+
+
+[ERROR: main: apt-get install language-pack-ja fcitx-mozc -y] return with 100
+E: Unable to locate package language-pack-ja
+
+
+
+
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated left-pad@1.3.0: use String.prototype.padStart()
+
+
+
+
+info: downloading installer
+info: profile set to 'default'
+info: default host triple is x86_64-unknown-linux-gnu
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: latest update on 2020-01-30, rust version 1.41.0 (5e1a79984 2020-01-27)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+info: installing component 'rust-std'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+info: default toolchain set to 'stable'
+
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded bat v0.12.1
+  Installing bat v0.12.1
+ Downloading crates ...
+  Downloaded wild v2.0.2
+  Downloaded ansi_colours v1.0.1
+  Downloaded clap v2.33.0
+  Downloaded lazy_static v1.4.0
+  Downloaded shell-words v0.1.0
+  Downloaded atty v0.2.14
+  Downloaded error-chain v0.12.2
+  Downloaded dirs v2.0.2
+  Downloaded content_inspector v0.2.4
+  Downloaded encoding v0.2.33
+  Downloaded console v0.8.0
+  Downloaded ansi_term v0.12.1
+  Downloaded git2 v0.10.2
+  Downloaded syntect v3.3.0
+  Downloaded cc v1.0.50
+  Downloaded memchr v2.3.3
+  Downloaded cfg-if v0.1.10
+  Downloaded term_size v0.3.1
+  Downloaded version_check v0.9.1
+  Downloaded strsim v0.8.0
+  Downloaded vec_map v0.8.1
+  Downloaded libc v0.2.67
+  Downloaded encoding-index-simpchinese v1.20141219.5
+  Downloaded encoding-index-korean v1.20141219.5
+  Downloaded encoding-index-japanese v1.20141219.5
+  Downloaded dirs-sys v0.3.4
+  Downloaded encoding-index-tradchinese v1.20141219.5
+  Downloaded encoding-index-singlebyte v1.20141219.5
+  Downloaded unicode-width v0.1.7
+  Downloaded textwrap v0.11.0
+  Downloaded bitflags v1.2.1
+  Downloaded ansi_term v0.11.0
+  Downloaded lazycell v1.2.1
+  Downloaded bincode v1.2.1
+  Downloaded serde_derive v1.0.104
+  Downloaded regex v1.3.4
+  Downloaded serde v1.0.104
+  Downloaded walkdir v2.3.1
+  Downloaded onig v5.0.0
+  Downloaded plist v0.4.2
+  Downloaded clicolors-control v1.0.1
+  Downloaded fnv v1.0.6
+  Downloaded termios v0.3.1
+  Downloaded log v0.4.8
+  Downloaded url v2.1.1
+  Downloaded yaml-rust v0.4.3
+  Downloaded serde_json v1.0.48
+  Downloaded encoding_index_tests v0.1.4
+  Downloaded regex-syntax v0.6.14
+  Downloaded flate2 v1.0.13
+  Downloaded libgit2-sys v0.9.2
+  Downloaded jobserver v0.1.21
+  Downloaded percent-encoding v2.1.0
+  Downloaded quote v1.0.2
+  Downloaded linked-hash-map v0.5.2
+  Downloaded line-wrap v0.1.1
+  Downloaded humantime v1.3.0
+  Downloaded idna v0.2.0
+  Downloaded syn v1.0.16
+  Downloaded thread_local v1.0.1
+  Downloaded onig_sys v69.2.0
+  Downloaded aho-corasick v0.7.8
+  Downloaded byteorder v1.3.4
+  Downloaded ryu v1.0.2
+  Downloaded xml-rs v0.8.0
+  Downloaded same-file v1.0.6
+  Downloaded itoa v0.4.5
+  Downloaded matches v0.1.8
+  Downloaded base64 v0.10.1
+  Downloaded proc-macro2 v1.0.9
+  Downloaded safemem v0.3.3
+  Downloaded crc32fast v1.2.0
+  Downloaded pkg-config v0.3.17
+  Downloaded unicode-bidi v0.3.4
+  Downloaded unicode-xid v0.2.0
+  Downloaded unicode-normalization v0.1.12
+  Downloaded miniz_oxide v0.3.6
+  Downloaded bindgen v0.50.1
+  Downloaded libz-sys v1.0.25
+  Downloaded smallvec v1.2.0
+  Downloaded adler32 v1.0.4
+  Downloaded quote v0.6.13
+  Downloaded peeking_take_while v0.1.2
+  Downloaded proc-macro2 v0.4.30
+  Downloaded which v2.0.1
+  Downloaded env_logger v0.6.2
+  Downloaded cexpr v0.3.6
+  Downloaded quick-error v1.2.3
+  Downloaded clang-sys v0.28.1
+  Downloaded fxhash v0.2.1
+  Downloaded unicode-xid v0.1.0
+  Downloaded failure v0.1.6
+  Downloaded termcolor v1.1.0
+  Downloaded nom v4.2.3
+  Downloaded shlex v0.1.1
+  Downloaded libloading v0.5.2
+  Downloaded backtrace v0.3.44
+  Downloaded version_check v0.1.5
+  Downloaded rustc-demangle v0.1.16
+  Downloaded backtrace-sys v0.1.32
+  Downloaded glob v0.3.0
+   Compiling libc v0.2.67
+   Compiling cfg-if v0.1.10
+   Compiling memchr v2.3.3
+   Compiling bitflags v1.2.1
+   Compiling pkg-config v0.3.17
+   Compiling byteorder v1.3.4
+   Compiling unicode-width v0.1.7
+   Compiling lazy_static v1.4.0
+   Compiling log v0.4.8
+   Compiling glob v0.3.0
+   Compiling version_check v0.1.5
+   Compiling regex-syntax v0.6.14
+   Compiling ansi_term v0.11.0
+   Compiling vec_map v0.8.1
+   Compiling rustc-demangle v0.1.16
+   Compiling proc-macro2 v0.4.30
+   Compiling strsim v0.8.0
+   Compiling quick-error v1.2.3
+   Compiling unicode-xid v0.1.0
+   Compiling termcolor v1.1.0
+   Compiling bindgen v0.50.1
+   Compiling serde v1.0.104
+   Compiling peeking_take_while v0.1.2
+   Compiling encoding_index_tests v0.1.4
+   Compiling proc-macro2 v1.0.9
+   Compiling shlex v0.1.1
+   Compiling unicode-xid v0.2.0
+   Compiling ryu v1.0.2
+   Compiling crc32fast v1.2.0
+   Compiling syn v1.0.16
+   Compiling smallvec v1.2.0
+   Compiling matches v0.1.8
+   Compiling safemem v0.3.3
+   Compiling version_check v0.9.1
+   Compiling adler32 v1.0.4
+   Compiling linked-hash-map v0.5.2
+   Compiling percent-encoding v2.1.0
+   Compiling same-file v1.0.6
+   Compiling itoa v0.4.5
+   Compiling xml-rs v0.8.0
+   Compiling fnv v1.0.6
+   Compiling lazycell v1.2.1
+   Compiling ansi_term v0.12.1
+   Compiling shell-words v0.1.0
+   Compiling wild v2.0.2
+   Compiling thread_local v1.0.1
+   Compiling clang-sys v0.28.1
+   Compiling nom v4.2.3
+   Compiling humantime v1.3.0
+   Compiling encoding-index-simpchinese v1.20141219.5
+   Compiling encoding-index-singlebyte v1.20141219.5
+   Compiling encoding-index-korean v1.20141219.5
+   Compiling encoding-index-tradchinese v1.20141219.5
+   Compiling encoding-index-japanese v1.20141219.5
+   Compiling unicode-normalization v0.1.12
+   Compiling unicode-bidi v0.3.4
+   Compiling line-wrap v0.1.1
+   Compiling error-chain v0.12.2
+   Compiling miniz_oxide v0.3.6
+   Compiling yaml-rust v0.4.3
+   Compiling walkdir v2.3.1
+   Compiling encoding v0.2.33
+   Compiling idna v0.2.0
+   Compiling aho-corasick v0.7.8
+   Compiling content_inspector v0.2.4
+   Compiling jobserver v0.1.21
+   Compiling atty v0.2.14
+   Compiling term_size v0.3.1
+   Compiling dirs-sys v0.3.4
+   Compiling termios v0.3.1
+   Compiling clicolors-control v1.0.1
+   Compiling fxhash v0.2.1
+   Compiling base64 v0.10.1
+   Compiling quote v0.6.13
+   Compiling bincode v1.2.1
+   Compiling serde_json v1.0.48
+   Compiling quote v1.0.2
+   Compiling flate2 v1.0.13
+   Compiling url v2.1.1
+   Compiling regex v1.3.4
+   Compiling cc v1.0.50
+   Compiling textwrap v0.11.0
+   Compiling dirs v2.0.2
+   Compiling plist v0.4.2
+   Compiling cexpr v0.3.6
+   Compiling env_logger v0.6.2
+   Compiling console v0.8.0
+   Compiling backtrace-sys v0.1.32
+   Compiling libloading v0.5.2
+   Compiling libz-sys v1.0.25
+   Compiling libgit2-sys v0.9.2
+   Compiling ansi_colours v1.0.1
+   Compiling clap v2.33.0
+   Compiling serde_derive v1.0.104
+   Compiling bat v0.12.1
+   Compiling backtrace v0.3.44
+   Compiling failure v0.1.6
+   Compiling which v2.0.1
+   Compiling onig_sys v69.2.0
+   Compiling onig v5.0.0
+   Compiling syntect v3.3.0
+   Compiling git2 v0.10.2
+    Finished release [optimized] target(s) in 6m 19s
+  Installing /root/.cargo/bin/bat
+   Installed package `bat v0.12.1` (executable `bat`)
+warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
+
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded ripgrep v11.0.2
+  Installing ripgrep v11.0.2
+ Downloading crates ...
+  Downloaded num_cpus v1.12.0
+  Downloaded ignore v0.4.11
+  Downloaded bstr v0.2.11
+  Downloaded globset v0.4.4
+  Downloaded grep v0.2.4
+  Downloaded crossbeam-channel v0.4.2
+  Downloaded regex-automata v0.1.8
+  Downloaded grep-regex v0.1.5
+  Downloaded grep-printer v0.1.3
+  Downloaded grep-matcher v0.1.3
+  Downloaded maybe-uninit v2.0.0
+  Downloaded grep-searcher v0.1.6
+  Downloaded grep-cli v0.1.3
+  Downloaded thread_local v0.3.6
+  Downloaded crossbeam-utils v0.7.2
+  Downloaded memmap v0.7.0
+  Downloaded bytecount v0.5.1
+  Downloaded encoding_rs v0.8.22
+  Downloaded encoding_rs_io v0.1.7
+  Downloaded autocfg v1.0.0
+   Compiling lazy_static v1.4.0
+   Compiling memchr v2.3.3
+   Compiling cfg-if v0.1.10
+   Compiling byteorder v1.3.4
+   Compiling log v0.4.8
+   Compiling libc v0.2.67
+   Compiling proc-macro2 v1.0.9
+   Compiling unicode-xid v0.2.0
+   Compiling encoding_rs v0.8.22
+   Compiling regex-syntax v0.6.14
+   Compiling serde v1.0.104
+   Compiling bitflags v1.2.1
+   Compiling autocfg v1.0.0
+   Compiling syn v1.0.16
+   Compiling ryu v1.0.2
+   Compiling fnv v1.0.6
+   Compiling maybe-uninit v2.0.0
+   Compiling same-file v1.0.6
+   Compiling unicode-width v0.1.7
+   Compiling bytecount v0.5.1
+   Compiling termcolor v1.1.0
+   Compiling strsim v0.8.0
+   Compiling itoa v0.4.5
+   Compiling thread_local v1.0.1
+   Compiling thread_local v0.3.6
+   Compiling crossbeam-utils v0.7.2
+   Compiling walkdir v2.3.1
+   Compiling textwrap v0.11.0
+   Compiling aho-corasick v0.7.8
+   Compiling grep-matcher v0.1.3
+   Compiling regex-automata v0.1.8
+   Compiling base64 v0.10.1
+   Compiling memmap v0.7.0
+   Compiling atty v0.2.14
+   Compiling num_cpus v1.12.0
+   Compiling quote v1.0.2
+   Compiling encoding_rs_io v0.1.7
+   Compiling clap v2.33.0
+   Compiling regex v1.3.4
+   Compiling serde_json v1.0.48
+   Compiling bstr v0.2.11
+   Compiling crossbeam-channel v0.4.2
+   Compiling grep-regex v0.1.5
+   Compiling ripgrep v11.0.2
+   Compiling globset v0.4.4
+   Compiling grep-searcher v0.1.6
+   Compiling grep-cli v0.1.3
+   Compiling ignore v0.4.11
+   Compiling serde_derive v1.0.104
+   Compiling grep-printer v0.1.3
+   Compiling grep v0.2.4
+    Finished release [optimized + debuginfo] target(s) in 4m 13s
+  Installing /root/.cargo/bin/rg
+   Installed package `ripgrep v11.0.2` (executable `rg`)
+warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
+
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: checking for self-updates
+info: cleaning up downloads & tmp directories
+
+info: downloading component 'rls'
+info: installing component 'rls'
+
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: checking for self-updates
+info: cleaning up downloads & tmp directories
+
+info: downloading component 'rust-src'
+info: installing component 'rust-src'
+
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded exa v0.9.0
+  Installing exa v0.9.0
+ Downloading crates ...
+  Downloaded natord v1.0.9
+  Downloaded users v0.9.1
+  Downloaded term_grid v0.1.7
+  Downloaded git2 v0.9.2
+  Downloaded datetime v0.4.7
+  Downloaded scoped_threadpool v0.1.9
+  Downloaded number_prefix v0.3.0
+  Downloaded locale v0.2.2
+  Downloaded zoneinfo_compiled v0.4.8
+  Downloaded pad v0.1.6
+  Downloaded iso8601 v0.1.1
+  Downloaded num-traits v0.1.43
+  Downloaded libgit2-sys v0.8.2
+  Downloaded num-traits v0.2.11
+  Downloaded nom v1.2.4
+   Compiling libc v0.2.67
+   Compiling autocfg v1.0.0
+   Compiling cc v1.0.50
+   Compiling pkg-config v0.3.17
+   Compiling memchr v2.3.3
+   Compiling unicode-width v0.1.7
+   Compiling nom v1.2.4
+   Compiling smallvec v1.2.0
+   Compiling log v0.4.8
+   Compiling matches v0.1.8
+   Compiling bitflags v1.2.1
+   Compiling cfg-if v0.1.10
+   Compiling byteorder v1.3.4
+   Compiling lazy_static v1.4.0
+   Compiling percent-encoding v2.1.0
+   Compiling regex-syntax v0.6.14
+   Compiling quick-error v1.2.3
+   Compiling termcolor v1.1.0
+   Compiling glob v0.3.0
+   Compiling natord v1.0.9
+   Compiling number_prefix v0.3.0
+   Compiling scoped_threadpool v0.1.9
+   Compiling ansi_term v0.12.1
+   Compiling num-traits v0.2.11
+   Compiling pad v0.1.6
+   Compiling term_grid v0.1.7
+   Compiling iso8601 v0.1.1
+   Compiling unicode-normalization v0.1.12
+   Compiling unicode-bidi v0.3.4
+   Compiling libz-sys v1.0.25
+   Compiling libgit2-sys v0.8.2
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling idna v0.2.0
+   Compiling locale v0.2.2
+   Compiling atty v0.2.14
+   Compiling num_cpus v1.12.0
+   Compiling term_size v0.3.1
+   Compiling users v0.9.1
+   Compiling aho-corasick v0.7.8
+   Compiling url v2.1.1
+   Compiling num-traits v0.1.43
+   Compiling regex v1.3.4
+   Compiling datetime v0.4.7
+   Compiling env_logger v0.6.2
+   Compiling exa v0.9.0
+   Compiling zoneinfo_compiled v0.4.8
+   Compiling git2 v0.9.2
+    Finished release [optimized] target(s) in 2m 39s
+  Installing /root/.cargo/bin/exa
+   Installed package `exa v0.9.0` (executable `exa`)
+warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
+
+info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+info: checking for self-updates
+info: cleaning up downloads & tmp directories
+
+info: downloading component 'rust-analysis'
+info: installing component 'rust-analysis'
+
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded procs v0.9.12
+  Installing procs v0.9.12
+ Downloading crates ...
+  Downloaded directories v2.0.2
+  Downloaded process_path v0.1.1
+  Downloaded getch v0.2.1
+  Downloaded pager v0.15.0
+  Downloaded dockworker v0.0.15
+  Downloaded procfs v0.7.7
+  Downloaded structopt v0.3.9
+  Downloaded which v3.1.0
+  Downloaded byte-unit v3.0.3
+  Downloaded console v0.9.2
+  Downloaded chrono v0.4.10
+  Downloaded anyhow v1.0.26
+  Downloaded toml v0.5.6
+  Downloaded tar v0.4.26
+  Downloaded backtrace v0.3.38
+  Downloaded backtrace-sys v0.1.23
+  Downloaded termios v0.2.2
+  Downloaded hex v0.4.2
+  Downloaded http v0.1.21
+  Downloaded hyper v0.12.35
+  Downloaded structopt-derive v0.4.2
+  Downloaded nix v0.11.1
+  Downloaded errno v0.2.4
+  Downloaded base64 v0.9.3
+  Downloaded libflate v0.1.27
+  Downloaded kernel32-sys v0.2.2
+  Downloaded mime v0.3.16
+  Downloaded futures v0.1.29
+  Downloaded url v1.7.2
+  Downloaded tokio v0.1.22
+  Downloaded hyperx v0.14.0
+  Downloaded unix_socket v0.5.0
+  Downloaded hyperlocal v0.6.0
+  Downloaded dirs v1.0.5
+  Downloaded failure_derive v0.1.6
+  Downloaded winapi v0.2.8
+  Downloaded iovec v0.1.4
+  Downloaded httparse v1.3.4
+  Downloaded xattr v0.2.2
+  Downloaded want v0.2.0
+  Downloaded tokio-threadpool v0.1.18
+  Downloaded unicase v2.6.0
+  Downloaded rustc_version v0.2.3
+  Downloaded num-integer v0.1.42
+  Downloaded tokio-buf v0.1.1
+  Downloaded tokio-tcp v0.1.4
+  Downloaded language-tags v0.2.2
+  Downloaded take_mut v0.2.2
+  Downloaded tokio-codec v0.1.2
+  Downloaded tokio-uds v0.2.6
+  Downloaded tokio-fs v0.1.7
+  Downloaded tokio-udp v0.1.6
+  Downloaded rle-decode-fast v1.0.1
+  Downloaded futures-cpupool v0.1.8
+  Downloaded tokio-timer v0.2.13
+  Downloaded proc-macro-error v0.4.9
+  Downloaded idna v0.1.5
+  Downloaded tokio-executor v0.1.10
+  Downloaded tokio-io v0.1.13
+  Downloaded void v1.0.2
+  Downloaded net2 v0.2.33
+  Downloaded percent-encoding v1.0.1
+  Downloaded winapi-build v0.1.1
+  Downloaded tokio-sync v0.1.8
+  Downloaded time v0.1.42
+  Downloaded tokio-current-thread v0.1.7
+  Downloaded filetime v0.2.8
+  Downloaded tokio-reactor v0.1.12
+  Downloaded http-body v0.1.0
+  Downloaded mio v0.6.21
+  Downloaded heck v0.3.1
+  Downloaded h2 v0.1.26
+  Downloaded bytes v0.4.12
+  Downloaded crossbeam-queue v0.2.1
+  Downloaded either v1.5.3
+  Downloaded parking_lot v0.9.0
+  Downloaded crossbeam-deque v0.7.3
+  Downloaded rustversion v1.0.2
+  Downloaded hex v0.3.2
+  Downloaded synstructure v0.12.3
+  Downloaded semver v0.9.0
+  Downloaded proc-macro-error-attr v0.4.9
+  Downloaded slab v0.4.2
+  Downloaded try-lock v0.2.2
+  Downloaded mio-uds v0.6.7
+  Downloaded unicode-segmentation v1.6.0
+  Downloaded lock_api v0.3.3
+  Downloaded crossbeam-epoch v0.8.2
+  Downloaded indexmap v1.3.2
+  Downloaded semver-parser v0.7.0
+  Downloaded string v0.2.1
+  Downloaded parking_lot_core v0.6.2
+  Downloaded syn-mid v0.5.0
+  Downloaded smallvec v0.6.13
+  Downloaded scopeguard v1.1.0
+  Downloaded memoffset v0.5.3
+   Compiling libc v0.2.67
+   Compiling cfg-if v0.1.10
+   Compiling autocfg v1.0.0
+   Compiling semver-parser v0.7.0
+   Compiling byteorder v1.3.4
+   Compiling futures v0.1.29
+   Compiling lazy_static v1.4.0
+   Compiling log v0.4.8
+   Compiling proc-macro2 v1.0.9
+   Compiling either v1.5.3
+   Compiling unicode-xid v0.2.0
+   Compiling maybe-uninit v2.0.0
+   Compiling syn v1.0.16
+   Compiling scopeguard v1.1.0
+   Compiling slab v0.4.2
+   Compiling fnv v1.0.6
+   Compiling rustversion v1.0.2
+   Compiling itoa v0.4.5
+   Compiling cc v1.0.50
+   Compiling bitflags v1.2.1
+   Compiling httparse v1.3.4
+   Compiling failure_derive v0.1.6
+   Compiling serde v1.0.104
+   Compiling version_check v0.9.1
+   Compiling unicode-width v0.1.7
+   Compiling crc32fast v1.2.0
+   Compiling rustc-demangle v0.1.16
+   Compiling try-lock v0.2.2
+   Compiling ryu v1.0.2
+   Compiling matches v0.1.8
+   Compiling winapi-build v0.1.1
+   Compiling smallvec v1.2.0
+   Compiling percent-encoding v1.0.1
+   Compiling nix v0.11.1
+   Compiling unicode-segmentation v1.6.0
+   Compiling winapi v0.2.8
+   Compiling adler32 v1.0.4
+   Compiling ansi_term v0.11.0
+   Compiling rle-decode-fast v1.0.1
+   Compiling safemem v0.3.3
+   Compiling regex-syntax v0.6.14
+   Compiling hex v0.3.2
+   Compiling void v1.0.2
+   Compiling language-tags v0.2.2
+   Compiling strsim v0.8.0
+   Compiling vec_map v0.8.1
+   Compiling take_mut v0.2.2
+   Compiling mime v0.3.16
+   Compiling anyhow v1.0.26
+   Compiling hex v0.4.2
+   Compiling byte-unit v3.0.3
+   Compiling semver v0.9.0
+   Compiling crossbeam-utils v0.7.2
+   Compiling crossbeam-epoch v0.8.2
+   Compiling num-traits v0.2.11
+   Compiling indexmap v1.3.2
+   Compiling num-integer v0.1.42
+   Compiling lock_api v0.3.3
+   Compiling tokio-sync v0.1.8
+   Compiling unicase v2.6.0
+   Compiling textwrap v0.11.0
+   Compiling backtrace-sys v0.1.23
+   Compiling unicode-bidi v0.3.4
+   Compiling kernel32-sys v0.2.2
+   Compiling unicode-normalization v0.1.12
+   Compiling heck v0.3.1
+   Compiling regex v1.3.4
+   Compiling rustc_version v0.2.3
+   Compiling idna v0.1.5
+   Compiling iovec v0.1.4
+   Compiling num_cpus v1.12.0
+   Compiling net2 v0.2.33
+   Compiling time v0.1.42
+   Compiling filetime v0.2.8
+   Compiling xattr v0.2.2
+   Compiling atty v0.2.14
+   Compiling termios v0.2.2
+   Compiling termios v0.3.1
+   Compiling errno v0.2.4
+   Compiling clicolors-control v1.0.1
+   Compiling dirs v1.0.5
+   Compiling dirs-sys v0.3.4
+   Compiling unix_socket v0.5.0
+   Compiling users v0.9.1
+   Compiling parking_lot_core v0.6.2
+   Compiling parking_lot v0.9.0
+   Compiling memoffset v0.5.3
+   Compiling hyper v0.12.35
+   Compiling base64 v0.10.1
+   Compiling base64 v0.9.3
+   Compiling want v0.2.0
+   Compiling quote v1.0.2
+   Compiling smallvec v0.6.13
+   Compiling libflate v0.1.27
+   Compiling url v1.7.2
+   Compiling bytes v0.4.12
+   Compiling futures-cpupool v0.1.8
+   Compiling serde_json v1.0.48
+   Compiling toml v0.5.6
+   Compiling mio v0.6.21
+   Compiling tar v0.4.26
+   Compiling clap v2.33.0
+   Compiling getch v0.2.1
+   Compiling console v0.9.2
+   Compiling pager v0.15.0
+   Compiling directories v2.0.2
+   Compiling tokio-executor v0.1.10
+   Compiling crossbeam-queue v0.2.1
+   Compiling backtrace v0.3.38
+   Compiling process_path v0.1.1
+   Compiling tokio-io v0.1.13
+   Compiling http v0.1.21
+   Compiling tokio-buf v0.1.1
+   Compiling string v0.2.1
+   Compiling mio-uds v0.6.7
+   Compiling tokio-current-thread v0.1.7
+   Compiling tokio-timer v0.2.13
+   Compiling chrono v0.4.10
+   Compiling synstructure v0.12.3
+   Compiling syn-mid v0.5.0
+   Compiling tokio-codec v0.1.2
+   Compiling hyperx v0.14.0
+   Compiling http-body v0.1.0
+   Compiling h2 v0.1.26
+   Compiling procfs v0.7.7
+   Compiling serde_derive v1.0.104
+   Compiling tokio-reactor v0.1.12
+   Compiling crossbeam-deque v0.7.3
+   Compiling proc-macro-error v0.4.9
+   Compiling proc-macro-error-attr v0.4.9
+   Compiling failure v0.1.6
+   Compiling tokio-udp v0.1.6
+   Compiling tokio-uds v0.2.6
+   Compiling tokio-tcp v0.1.4
+   Compiling tokio-threadpool v0.1.18
+   Compiling which v3.1.0
+   Compiling tokio-fs v0.1.7
+   Compiling tokio v0.1.22
+   Compiling structopt-derive v0.4.2
+   Compiling hyperlocal v0.6.0
+   Compiling dockworker v0.0.15
+   Compiling structopt v0.3.9
+   Compiling procs v0.9.12
+    Finished release [optimized] target(s) in 8m 22s
+  Installing /root/.cargo/bin/procs
+   Installed package `procs v0.9.12` (executable `procs`)
+warning: be sure to add `/root/.cargo/bin` to your PATH to be able to run the installed binaries
+
+
+
+
