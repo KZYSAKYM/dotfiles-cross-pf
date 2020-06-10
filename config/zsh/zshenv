@@ -21,6 +21,7 @@ alias cat='bat -p'
 alias vim='nvim'
 alias v='nvim'
 alias ps='procs'
+alias pstree='procs --tree'
 
 alias _vim="/usr/bin/vim"
 alias _ls="/bin/ls"
@@ -29,7 +30,7 @@ alias b="cd ./../.."
 alias __ps='/bin/ps'
 
 if [ "$(uname | grep Linux)" ]; then
-	alias fd="fdfind"
+	alias fd="/usr/bin/fd"
 fi
 
 export RANGER_BIN=$(which ranger)
@@ -65,10 +66,24 @@ rgexec() {
 	done
 }
 
+git-search() {
+	case $1 in
+	"append" | "A" | "Append" ) FILTER="C";;
+	"copy"   | "C" | "Copy"   ) FILTER="C";;
+	"delete" | "D" | "Delete" ) FILTER="D";;
+	"modify" | "M" | "Modify" ) FILTER="M";;
+	"rename" | "R" | "Rename" ) FILTER="R";;
+	esac
+	SEARCH_DIR=${2}
+	[ "$SEARCH_DIR" ] && SEARCH_DIR="--relative=$SEARCH_DIR"
+	git log --diff-filter=$FILTER --summary $SEARCH_DIR
+}
+
 # PATH
 
 export GOPATH=$HOME/.go
-export PATH=$HOME/.local/bin:$GOPATH:$PATH
+export CARGO_PATH=$HOME/.cargo/bin
+export PATH=$HOME/.local/bin:$CARGO_PATH:$GOPATH:$PATH
 source $HOME/.cargo/env
 
 # Git
