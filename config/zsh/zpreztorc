@@ -50,12 +50,20 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'prompt' \
   'command-not-found' \
+  'fasd' \
   'enhancd'
 
 # enhancd
 export ENHANCD_DOT_ARG="^"
 export ENHANCD_HOME_ARG=""
 export ENHANCD_DISABLE_HOME=1
+
+# fasd
+[ $(command -v fasd) ] || {
+	if [ -d /etc/apt ]; then
+		sudo apt install fasd
+	fi
+}
 
 #
 # Autosuggestions
@@ -233,6 +241,11 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
+
+#
+# Custom Key Binding
+#
+bindkey "^R" history-incremental-search-backward
 
 #
 # Utility

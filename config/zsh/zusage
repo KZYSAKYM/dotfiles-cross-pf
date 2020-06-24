@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# zsh usage of my customization
+# 
+
+usage_keyword() {
+	echo "usage keyword"
+	echo "  PLUGIN:"
+	echo "    fasd"
+}
+
+usage_fasd() {
+	echo "PLUGIN+ALIAS fasd:"
+	echo "  $ f:  fasd -f       : ファイルリストアップ"
+	echo "  $ d:  fasd -d       : ディレクトリリストアップ"
+	echo "  $ a:  fasd -a       : 全アイテムリストアップ"
+	echo "  $ s:  fasd -si      : 検索"
+	echo "  $ sd: fasd -sid     : 対話的にディレクトリ選択"
+	echo "  $ sf: fasd -sif     : 対話的にファイル選択"
+	echo "  $ z:  fasd_cd -d    : cd拡張"
+	echo "  $ zz: fasd_cd -d -i : 対話的にcd"
+	echo "  $ ef: fasd -f -e    : ファイル選択してコマンド実行"
+	echo "  $ ed: fasd -d -e    : ディレクトリ選択してコマンド実行"
+}

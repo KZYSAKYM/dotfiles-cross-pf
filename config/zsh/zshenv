@@ -10,7 +10,38 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+usage() {
+	. ${ZDOTDIR:-$HOME}/.zusage
+	echo "usage: my zsh customization"
+	echo "  PLUGIN:  zshの外部プラグイン"
+	echo "  MODULE:  zpreztoの組み込みモジュール"
+	echo "  COMMAND: コマンド"
+	echo "  ALIAS:   エイリアス"
+	echo "----"
+	case "$1" in
+	"keyword" )
+		usage_keyword;;
+	"fasd" )
+		usage_fasd;;
+	* )
+		usage_keyword
+		usage_fasd
+		;;
+	esac
+}
+
 # Alias
+# fasd
+alias a='fasd -a'
+alias s='fasd -si'
+alias d='fasd -d'
+alias f='fasd -f'
+alias sd='fasd -sid'
+alias sf='fasd -sif'
+alias z='fasd_cd -d'
+alias zz='fasd_cd -d -i'
+alias ef='fasd -f -e'
+alias ed='fasd -d -e'
 
 alias ls='exa'
 alias ll='exa -alF'
