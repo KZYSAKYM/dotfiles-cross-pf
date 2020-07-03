@@ -5,7 +5,7 @@ linux:
 mac:
   main:
     cmd: 'cp'
-    args: '$CONF_DIR/config/zsh/z* $HOME/.zprezto/runcoms'
+    args: '$CONF_DIR/zsh/z* $HOME/.zprezto/runcoms'
 windows:
   main:
     cmd: 'echo'

@@ -8,10 +8,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install zsh -y'
+    args: 'install zsh'
 windows:
   main:
     cmd: 'echo'

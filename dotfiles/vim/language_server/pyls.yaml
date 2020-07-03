@@ -11,10 +11,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install python3-pip -y'
+    args: 'install python3'
   posthook:
     cmd: 'pip3'
     args: 'install python-language-server'

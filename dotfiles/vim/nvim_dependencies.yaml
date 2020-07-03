@@ -11,10 +11,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install python3 -y'
+    args: 'install python3'
 windows:
   main:
     cmd: 'choco'

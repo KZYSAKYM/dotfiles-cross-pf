@@ -8,10 +8,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install nodejs npm -y'
+    args: 'install nodejs npm'
 windows:
   main:
     cmd: 'choco'

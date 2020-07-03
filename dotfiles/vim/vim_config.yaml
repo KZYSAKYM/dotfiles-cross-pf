@@ -11,7 +11,7 @@ mac:
     args: '$CONF_DIR/vim/init.vim $HOME/.vimrc'
   posthook:
     cmd: 'cp'
-    args: '$CONF_DIR/config/vim/*.toml $HOME'
+    args: '$CONF_DIR/vim/*.toml $HOME'
 windows:
   main:
     cmd: 'cp'

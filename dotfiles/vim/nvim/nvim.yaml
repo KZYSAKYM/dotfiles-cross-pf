@@ -11,10 +11,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install neovim -y'
+    args: 'install neovim'
 windows:
   main:
     cmd: 'choco'

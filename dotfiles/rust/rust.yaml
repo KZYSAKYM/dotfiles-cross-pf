@@ -11,10 +11,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install curl libz-dev cmake libclang-dev rustc cargo -y'
+    args: 'install curl libz-dev cmake libclang-dev rustc cargo'
   posthook:
     cmd: 'curl'
     args: 'https://sh.rustup.rs -sSf | sh -s -- -y'

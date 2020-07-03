@@ -8,10 +8,10 @@ linux:
 mac:
   prehook:
     cmd: 'brew'
-    args: 'update -y'
+    args: 'update'
   main:
     cmd: 'brew'
-    args: 'install procs -y'
+    args: 'install procs'
   posthook:
     cmd: 'mkdir'
     args: '$HOME_CONF/procs; cp $CONF_DIR/procs/config.toml $HOME_CONF/procs'
