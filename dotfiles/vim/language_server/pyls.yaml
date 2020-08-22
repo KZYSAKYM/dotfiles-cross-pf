@@ -1,12 +1,12 @@
 linux:
   prehook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install python3-pip -y'
   posthook:
-    cmd: 'pip3'
+    cmd: 'sudo -H pip3'
     args: 'install python-language-server'
 mac:
   prehook:

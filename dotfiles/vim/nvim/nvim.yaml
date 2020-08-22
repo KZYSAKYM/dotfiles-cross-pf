@@ -1,12 +1,12 @@
 linux:
   prehook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install neovim -y'
   posthook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install python-neovim python3-neovim -y'
 mac:
   prehook:

@@ -1,12 +1,12 @@
 linux:
   prehook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install software-properties-common python-dev python-pip python3-dev python3-pip -y'
   posthook:
-    cmd: 'add-apt-repository'
+    cmd: 'sudo add-apt-repository'
     args: 'ppa:neovim-ppa/stable -y'
 mac:
   prehook:

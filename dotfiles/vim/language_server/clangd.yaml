@@ -1,9 +1,9 @@
 linux:
   prehook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install llvm -y'
 mac:
   prehook:

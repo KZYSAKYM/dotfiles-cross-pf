@@ -30,7 +30,7 @@ $ pip3 install pyyaml
   - Open command line
   - Execute the following
     ```sh
-    $ sudo python -m main.py
+    $ python main.py
     ```
 
 ## How to write my configurations?

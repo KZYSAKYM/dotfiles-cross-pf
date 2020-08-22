@@ -1,9 +1,9 @@
 linux:
   prehook:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'update -y'
   main:
-    cmd: 'apt-get'
+    cmd: 'sudo apt-get'
     args: 'install curl libz-dev cmake libclang-dev rustc cargo -y'
   posthook:
     cmd: 'curl'
