@@ -245,7 +245,7 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 #
 # Custom Key Binding
 #
-bindkey "^R" history-incremental-search-backward
+bindkey '^R' history-incremental-search-backward
 
 #
 # Utility
