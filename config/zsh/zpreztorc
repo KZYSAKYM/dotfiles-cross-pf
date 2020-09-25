@@ -65,6 +65,22 @@ export ENHANCD_DISABLE_HOME=1
 	fi
 }
 
+# fzf
+[ -d $HOME/.fzf ] || {
+	git clone https://github.com/junegunn/fzf $HOME/.fzf --depth 1
+	$HOME/.fzf/install --all
+}
+[ -d $HOME/.fzf ] && {
+	export PATH="$PATH:$HOME/.fzf/bin"
+}
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPS='--height 30% --border'
+if [ -f $HOME/.fzf.zsh ]; then
+	source $HOME/.fzf.zsh
+else
+	bindkey '^R' history-incremental-search-backward
+fi
+
 #
 # Autosuggestions
 #
@@ -245,7 +261,7 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 #
 # Custom Key Binding
 #
-bindkey '^R' history-incremental-search-backward
+bindkey '^F' fasd-complete
 
 #
 # Utility
@@ -254,4 +270,4 @@ bindkey '^R' history-incremental-search-backward
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-# zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:module:utility' safe-ops 'no'

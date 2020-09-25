@@ -23,9 +23,12 @@ usage() {
 		usage_keyword;;
 	"fasd" )
 		usage_fasd;;
+	"keybinding" )
+		usage_keybinding;;
 	* )
 		usage_keyword
 		usage_fasd
+		usage_keybinding
 		;;
 	esac
 }
@@ -61,20 +64,33 @@ alias b="cd ./../.."
 alias __ps='/bin/ps'
 
 if [ "$(uname | grep Linux)" ]; then
-	alias fd="/usr/bin/fd"
+	if [ -f /usr/bin/fdfind ]; then
+		alias fd="/usr/bin/fdfind"
+	elif [ -f /usr/local/bin/fdfind ]; then
+		alias fd="/usr/local/bin/fdfind"
+	fi
 fi
 
-export RANGER_BIN=$(which ranger)
+if [ -f /usr/bin/ranger ]; then
+	export RANGER_BIN=/usr/bin/ranger
+elif [ -f /usr/local/bin/ranger ]; then
+	export RANGER_BIN=/usr/local/bin/ranger
+else
+	export RANGER_BIN=$(which ranger)
+fi
 
 # Functions
 
-ranger() {
-	if [ -z $RANGER_LEVEL ]; then
-		$RANGER_BIN $@
-	else
-		exit
-	fi
-}
+# This function does not work correctly in myenv
+# because myenv is zsh on bash, so when exiting, shell return bash
+#ranger() {
+#	if [ -z $RANGER_LEVEL ]; then
+#		$RANGER_BIN $@
+#	else
+#		exit
+#	fi
+#}
+alias r=ranger
 
 fdrg() {
 	suffix="$1"

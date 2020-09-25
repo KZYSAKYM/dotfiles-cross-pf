@@ -52,9 +52,125 @@ repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_post_source =  '''
+" pip3 install python-language-server
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'pyls',
+    \ 'cmd': {server_info->['pyls']},
+    \ 'whitelist': ['python'],
+    \ })
+endif
+" npm install -g bash-language-server
+if executable('bash-language-server')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'bash-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+    \ 'whitelist': ['sh'],
+    \ })
+endif
+" sudo apt install llvm
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd': {server_info->['clangd']},
+    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+    \ })
+endif
+" go get golang.org/x/tools/cmd/gopls
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
+" npm install -g typescript typescript-language-server
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'javascript support using typescript-language-server',
+      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+      \ 'whitelist': ['javascript', 'javascript.jsx']
+      \ })
+endif
+" npm install -g vscode-html-languageserver-bin
+if executable('html-languageserver')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'html-languageserver',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
+    \ 'whitelist': ['html'],
+  \ })
+endif
+" rustup update && rustup component add rls rust-analysis rust-src
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+" mkdir ~/lsp && curl -L https://github.com/angelozerr/lsp4xml/releases/download/0.3.0/org.eclipse.lsp4xml-0.3.0-uber.jar -o ~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar
+if executable('java') && filereadable(expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar'))
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'lsp4xml',
+        \ 'cmd': {server_info->[
+        \     'java',
+        \     '-noverify',
+        \     '-Xmx1G',
+        \     '-XX:+UseStringDeduplication',
+        \     '-Dfile.encoding=UTF-8',
+        \     '-jar',
+        \     expand('~/lsp/org.eclipse.lsp4xml-0.3.0-uber.jar')
+        \ ]},
+        \ 'whitelist': ['xml']
+        \ })
+endif
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
 # Language Support
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+    nnoremap <C-p> :GFiles<CR>
+    nnoremap <C-o> :History<CR>
+
+" 動かないのでコメントアウト(いつか動かしたい)
+"function! RipgrepFzf(query, fullscreen)
+"  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+"  let initial_command = printf(command_fmt, shellescape(a:query))
+"  let reload_command = printf(command_fmt, '{q}')
+"  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+"  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+"endfunction
+"
+"command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+"    nnoremap <C-g> :Rg<Space>
+'''

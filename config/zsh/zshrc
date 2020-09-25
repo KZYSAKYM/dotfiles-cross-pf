@@ -9,4 +9,9 @@
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
+if [[ -s "${ZDOTDIR:-$HOME}/.zpreztorc" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zpreztorc"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.zshenv" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshenv"
+fi
