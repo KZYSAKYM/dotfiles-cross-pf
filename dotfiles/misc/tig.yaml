@@ -1,0 +1,18 @@
+linux:
+  main:
+    cmd: 'sudo apt-get'
+    args: 'install tig -y'
+  posthook:
+    cmd: 'cp'
+    args: '$CONF_DIR/tig/tigrc $HOME/.tigrc'
+mac:
+  main:
+    cmd: 'brew'
+    args: 'install tig'
+  posthook:
+    cmd: 'cp'
+    args: '$CONF_DIR/tig/tigrc $HOME/.tigrc'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'Please use Git-for-Windows'
