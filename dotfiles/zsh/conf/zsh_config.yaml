@@ -11,7 +11,7 @@ mac:
     args: '$CONF_DIR/zsh/z* $HOME/.zprezto/runcoms'
   posthook:
     cmd: 'cp'
-    args: '$COND_DIR/zsh/zusage $HOME/.zusage'
+    args: '$CONF_DIR/zsh/zusage $HOME/.zusage'
 windows:
   main:
     cmd: 'echo'
