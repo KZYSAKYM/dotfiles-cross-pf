@@ -29,7 +29,6 @@ class Template(class_base.ProjectBase, Enum):
     FLOW = 2
     VALIANT = 3
 
-
 class Parser(class_base.ProjectBase):
     def __init__(self, parser_library: Any = yaml,
                  stdout=sys.stdout, stderr=sys.stderr,
@@ -96,7 +95,7 @@ class Parser(class_base.ProjectBase):
 
         return Template.ERROR
 
-    def walk(self, dirname: str) -> None:
+    def walk(self, dirname: str, recipes: tuple) -> None:
         """
         walk in dotfiles dirs.
         sub directories should be processed after files.
@@ -116,11 +115,15 @@ class Parser(class_base.ProjectBase):
         self.print_debug('walk in %s' % dirname)
         for f in files:
             if not os.path.isdir(f):
-                self.process(f)
+                if recipes:
+                    if f.split("/")[-1].split(".yaml")[0] in recipes:
+                        self.process(f)
+                else:
+                    self.process(f)
             else:
                 dirs.append(f)
         for d in dirs:
-            self.walk(d)
+            self.walk(d, recipes)
 
     def process(self, filename: str):
         self.print_debug('process %s' % filename, depth=0)

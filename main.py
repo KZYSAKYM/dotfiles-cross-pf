@@ -3,10 +3,29 @@
 
 import os
 import sys
+import argparse
 from script import class_parser
 sys.path.append(os.path.join(os.path.dirname(__file__), '.'))
 
-DEBUG: bool = False
+parser = argparse.ArgumentParser()
+parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="enable debug messages")
+parser.add_argument(
+        "--recipe",
+        nargs="*",
+        action="store",
+        help="specify recipes")
+
+args = parser.parse_args()
+DEBUG: bool = args.debug
+RECIPES: tuple
+if args.recipe:
+    RECIPES = tuple(args.recipe)
+    print("specified recipes: {}".format(RECIPES))
+else:
+    RECIPES = ()
 
 if __name__ == "__main__":
     dotfiles_parser = class_parser.Parser()
@@ -25,4 +44,4 @@ if __name__ == "__main__":
         os.environ['HOME_CONF'] = homedir + '/.config'
         os.environ['HOME_CACHE'] = homedir + '/.cache'
         os.environ['HOME_LOCAL'] = homedir + '/.local'
-    dotfiles_parser.walk(os.environ['DOT_DIR'])
+    dotfiles_parser.walk(os.environ['DOT_DIR'], RECIPES)
