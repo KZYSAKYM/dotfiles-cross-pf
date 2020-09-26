@@ -22,31 +22,30 @@ nnoremap k gk
 :command NumOff set number!
 
 " Tab
-"set expandtab
-set tabstop=8
-set shiftwidth=8
-
 :function FnTab8()
-:  set expandtab!
-:  set tabstop=8
-:  set shiftwidth=8
+:  setlocal expandtab!
+:  setlocal tabstop=8
+:  setlocal shiftwidth=8
 :endfunction
 
 :function FnTab4()
-:  set expandtab
-:  set tabstop=4
-:  set shiftwidth=4
+:  setlocal expandtab
+:  setlocal tabstop=4
+:  setlocal shiftwidth=4
 :endfunction
 
 :function FnTab2()
-:  set expandtab
-:  set tabstop=2
-:  set shiftwidth=2
+:  setlocal expandtab
+:  setlocal tabstop=2
+:  setlocal shiftwidth=2
 :endfunction
 
 :command Tab2 call FnTab2()
 :command Tab4 call FnTab4()
 :command Tab8 call FnTab8()
+
+" Set default Tab4
+call FnTab4()
 
 set ignorecase
 set smartcase
@@ -154,3 +153,50 @@ endif
 
 " Plugin Setting
 :set tags=tags
+
+" Change Tab setting per filetype
+augroup ftTab
+  autocmd!
+  " C like Lang
+  autocmd BufNewFile,BufRead *.c      call FnTab8()
+  autocmd BufNewFile,BufRead *.cpp    call FnTab8()
+  autocmd BufNewFile,BufRead *.h      call FnTab8()
+  autocmd BufNewFile,BufRead *.hpp    call FnTab8()
+  autocmd BufNewFile,BufRead *.cc     call FnTab8()
+  " Other Programing Lang
+  autocmd BufNewFile,BufRead *.py     call FnTab4()
+  autocmd BufNewFile,BufRead *.rb     call FnTab4()
+  autocmd BufNewFile,BufRead *.rs     call FnTab4()
+  autocmd BufNewFile,BufRead *.go     call FnTab4()
+  autocmd BufNewFile,BufRead *.cs     call FnTab4()
+  autocmd BufNewFile,BufRead *.java   call FnTab4()
+  autocmd BufNewFile,BufRead *.lua    call FnTab4()
+  autocmd BufNewFile,BufRead *.sh     call FnTab2()
+  autocmd BufNewFile,BufRead *.vim    call FnTab2()
+  autocmd BufNewFile,BufRead *.ps1    call FnTab2()
+  autocmd BufNewFile,BufRead *.bat    call FnTab2()
+  " Web Lang
+  autocmd BufNewFile,BufRead *.js     call FnTab2()
+  autocmd BufNewFile,BufRead *.jsx    call FnTab2()
+  autocmd BufNewFile,BufRead *.ts     call FnTab2()
+  autocmd BufNewFile,BufRead *.tsx    call FnTab2()
+  autocmd BufNewFile,BufRead *.xhtml  call FnTab2()
+  autocmd BufNewFile,BufRead *.html   call FnTab2()
+  autocmd BufNewFile,BufRead *.htm    call FnTab2()
+  autocmd BufNewFile,BufRead *.xhtml  call FnTab2()
+  autocmd BufNewFile,BufRead *.xml    call FnTab2()
+  autocmd BufNewFile,BufRead *.css    call FnTab2()
+  autocmd BufNewFile,BufRead *.scss   call FnTab2()
+  " Other
+  autocmd BufNewFile,BufRead *.md     call FnTab2()
+  autocmd BufNewFile,BufRead *.rst    call FnTab2()
+  autocmd BufNewFile,BufRead *.txt    call FnTab2()
+  autocmd BufNewFile,BufRead *.svg    call FnTab2()
+  autocmd BufNewFile,BufRead *.ini    call FnTab2()
+  autocmd BufNewFile,BufRead *.log    call FnTab2()
+  autocmd BufNewFile,BufRead *.csv    call FnTab8()
+  autocmd BufNewFile,BufRead *.json   call FnTab2()
+  autocmd BufNewFile,BufRead *.yaml   call FnTab2()
+  autocmd BufNewFile,BufRead *.yml    call FnTab2()
+  autocmd BufNewFile,BufRead *.toml   call FnTab2()
+augroup END
