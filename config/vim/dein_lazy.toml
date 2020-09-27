@@ -46,3 +46,6 @@ on_ft = ['html', 'css']
 
 [[plugins]]
 repo = 'simeji/winresizer'
+hook_add = '''
+nnoremap <C-e> :WinResizerStartResize<CR>
+'''
