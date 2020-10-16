@@ -19,11 +19,11 @@ nnoremap k gk
 
 " Alias for set number
 :command NumOn  set number
-:command NumOff set number!
+:command NumOff set nonumber
 
 " Tab
 :function FnTab8()
-:  setlocal expandtab!
+:  setlocal noexpandtab
 :  setlocal tabstop=8
 :  setlocal shiftwidth=8
 :endfunction
@@ -65,14 +65,9 @@ noremap <C-l> $
 noremap <C-s> :w<CR>
 noremap <C-a> gg V G
 
-" Using <C-d> also As <Esc>
-imap <C-d> <Esc>
-noremap! <C-d> <Esc>
-imap <C-d><C-d> <Esc>:
-noremap! <C-d><C-d> <Esc>:
-" Using <C-q><C-q> as quit and save
-imap <C-q><C-q> <Esc>:wq<CR>
-noremap! <C-q><C-q> <Esc>:wq<CR>
+" Using <C-c> also As <Esc>
+noremap <C-c> <Esc>
+noremap <C-c><C-c> <Esc>:
 
 " ranger-explorer
 nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
@@ -83,9 +78,6 @@ nnoremap <C-f> :RangerCurrentDirectoryNewTab<CR>
 
 " QuickRun
 nnoremap <C-r> :QuickRun<CR>
-
-" VimFiler
-" nnoremap <C-f> :VimFiler<CR>
 
 " For Window
 "" Change WIndow with mouse
@@ -183,7 +175,6 @@ augroup ftTab
   autocmd BufNewFile,BufRead *.xhtml  call FnTab2()
   autocmd BufNewFile,BufRead *.html   call FnTab2()
   autocmd BufNewFile,BufRead *.htm    call FnTab2()
-  autocmd BufNewFile,BufRead *.xhtml  call FnTab2()
   autocmd BufNewFile,BufRead *.xml    call FnTab2()
   autocmd BufNewFile,BufRead *.css    call FnTab2()
   autocmd BufNewFile,BufRead *.scss   call FnTab2()
