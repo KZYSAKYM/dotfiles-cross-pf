@@ -74,7 +74,7 @@ nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
 nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 nnoremap <silent><Leader>r :RangerCurrentDirectoryNewTab<CR>
 
-nnoremap <C-f> :RangerCurrentDirectoryNewTab<CR>
+nnoremap <C-f> :Ranger<CR>
 
 " QuickRun
 nnoremap <C-r> :QuickRun<CR>
