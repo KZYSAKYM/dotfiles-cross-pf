@@ -13,10 +13,31 @@ nonnumeric_search = true
 align = "Left"
 
 [[columns]]
-kind = "Command"
-style = "BrightWhite"
+kind = "Docker"
+style = "BrightGreen"
 numeric_search = false
 nonnumeric_search = true
+align = "Left"
+
+[[columns]]
+kind = "Separator"
+style = "White"
+numeric_search = false
+nonnumeric_search = false
+align = "Left"
+
+[[columns]]
+kind = "UsageCpu"
+style = "ByPercentage"
+numeric_search = false
+nonnumeric_search = false
+align = "Left"
+
+[[columns]]
+kind = "UsageMem"
+style = "ByPercentage"
+numeric_search = false
+nonnumeric_search = false
 align = "Left"
 
 [[columns]]
@@ -33,33 +54,26 @@ numeric_search = false
 nonnumeric_search = false
 align = "Left"
 
-#[[columns]]
-#kind = "Nice"
-#style = "BrightMagenta"
-#numeric_search = false
-#nonnumeric_search = false
-#align = "Right"
-
-#[[columns]]
-#kind = "Tty"
-#style = "BrightWhite"
-#numeric_search = false
-#nonnumeric_search = false
-#align = "Left"
-
 [[columns]]
-kind = "UsageCpu"
-style = "ByPercentage"
+kind = "Nice"
+style = "BrightMagenta"
 numeric_search = false
 nonnumeric_search = false
-align = "Right"
+align = "Left"
 
 [[columns]]
-kind = "UsageMem"
-style = "ByPercentage"
+kind = "Tty"
+style = "BrightWhite"
 numeric_search = false
 nonnumeric_search = false
-align = "Right"
+align = "Left"
+
+[[columns]]
+kind = "Separator"
+style = "White"
+numeric_search = false
+nonnumeric_search = false
+align = "Left"
 
 #[[columns]]
 #kind = "VmPeak"
@@ -126,12 +140,12 @@ numeric_search = false
 nonnumeric_search = false
 align = "Left"
 
-#[[columns]]
-#kind = "CpuTime"
-#style = "BrightCyan"
-#numeric_search = false
-#nonnumeric_search = false
-#align = "Left"
+[[columns]]
+kind = "CpuTime"
+style = "BrightCyan"
+numeric_search = false
+nonnumeric_search = false
+align = "Left"
 
 #[[columns]]
 #kind = "StartTime"
@@ -141,24 +155,24 @@ align = "Left"
 #align = "Left"
 
 [[columns]]
-kind = "Docker"
-style = "BrightGreen"
-numeric_search = false
-nonnumeric_search = true
-align = "Left"
-
-[[columns]]
 kind = "Separator"
 style = "White"
 numeric_search = false
 nonnumeric_search = false
 align = "Left"
 
+[[columns]]
+kind = "Command"
+style = "BrightWhite"
+numeric_search = false
+nonnumeric_search = true
+align = "Left"
+
 #[[columns]]
-#kind = "Command"
-#style = "BrightWhite"
+#kind = "Separator"
+#style = "White"
 #numeric_search = false
-#nonnumeric_search = true
+#nonnumeric_search = false
 #align = "Left"
 
 [style]
