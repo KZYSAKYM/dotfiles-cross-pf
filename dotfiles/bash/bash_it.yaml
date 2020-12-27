@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'git'
+    args: 'clone --depth 1 https://github.com/Bash-it/bash-it.git ~/.bash_it'
+  main:
+    cmd: 'cd'
+    args: '~/.bash_it && ./install.sh -sa'
+mac:
+  prehook:
+    cmd: 'git'
+    args: 'clone --depth 1 https://github.com/Bash-it/bash-it.git ~/.bash_it'
+  main:
+    cmd: 'cd'
+    args: '~/.bash_it && ./install.sh -sa'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'No support for zsh'
