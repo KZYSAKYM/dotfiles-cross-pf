@@ -174,3 +174,11 @@ hook_add = '''
 "command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 "    nnoremap <C-g> :Rg<Space>
 '''
+
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+hook_add = '''
+let g:floaterm_height = 1.0
+let g:floaterm_width = 0.8
+let g:floaterm_keymap_toggle = '<Leader>t'
+'''
