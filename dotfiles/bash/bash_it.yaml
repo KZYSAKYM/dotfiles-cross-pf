@@ -5,6 +5,9 @@ linux:
   main:
     cmd: 'cd'
     args: '~/.bash_it && ./install.sh -sa'
+  posthook:
+    cmd: 'sed'
+    args: '-i "s/\(export BASH_IT_THEME=\).*/\1\"agnoster\"/g" ~/.bashrc'
 mac:
   prehook:
     cmd: 'git'
@@ -12,6 +15,9 @@ mac:
   main:
     cmd: 'cd'
     args: '~/.bash_it && ./install.sh -sa'
+  posthook:
+    cmd: 'sed'
+    args: '-i "s/\(export BASH_IT_THEME=\).*/\1\"agnoster\"/g" ~/.bashrc'
 windows:
   main:
     cmd: 'echo'
