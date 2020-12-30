@@ -176,9 +176,9 @@ hook_add = '''
 '''
 
 [[plugins]]
-" install neovim-remote: pip3 install neovim-remote
 repo = 'voldikss/vim-floaterm'
 hook_add = '''
+" install neovim-remote: pip3 install neovim-remote
 let g:floaterm_height = 1.0
 let g:floaterm_width = 0.8
 let g:floaterm_keymap_toggle = '<Leader>t'
