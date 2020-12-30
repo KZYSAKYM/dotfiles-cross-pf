@@ -1,13 +1,13 @@
 linux:
   prehook:
-    cmd: 'sudo apt-get'
-    args: 'update -y'
+    cmd: 'mkdir'
+    args: '$HOME/.local/bin -p'
   main:
-    cmd: 'sudo apt-get'
-    args: 'install neovim -y'
+    cmd: 'wget'
+    args: '-P $HOME/.local/bin https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
   posthook:
-    cmd: 'sudo apt-get'
-    args: 'install python-neovim python3-neovim -y'
+    cmd: 'sudo ln -fs'
+    args: '$HOME/.local/bin/nvim.appimage /usr/bin/nvim'
 mac:
   prehook:
     cmd: 'brew'
