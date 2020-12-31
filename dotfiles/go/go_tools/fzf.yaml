@@ -1,10 +1,7 @@
 linux:
-  prehook:
-    cmd: 'sudo apt-get'
-    args: 'update -y'
   main:
-    cmd: 'sudo apt-get'
-    args: 'install fzf -y'
+    cmd: 'test -d $HOME/.fzf ||'
+    args: 'git clone https://github.com/junegunn/fzf $HOME/.fzf --depth 1 && $HOME/.fzf/install --all'
 mac:
   prehook:
     cmd: 'brew'

@@ -1,0 +1,12 @@
+linux:
+  main:
+    cmd: 'cp'
+    args: '$CONF_DIR/tmux/tmux.conf $HOME/.tmux.conf'
+mac:
+  main:
+    cmd: 'cp'
+    args: '$CONF_DIR/tmux/tmux.conf $HOME/.tmux.conf'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'no support'

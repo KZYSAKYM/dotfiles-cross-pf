@@ -1,0 +1,18 @@
+linux:
+  prehook:
+    cmd: 'sudo apt-get'
+    args: 'update -y'
+  main:
+    cmd: 'sudo apt-get'
+    args: 'install tmux -y'
+mac:
+  prehook:
+    cmd: 'brew'
+    args: 'update'
+  main:
+    cmd: 'brew'
+    args: 'install tmux reattach-to-user-namespace'
+windows:
+  main:
+    cmd: 'echo'
+    args: 'No support for tmux'
