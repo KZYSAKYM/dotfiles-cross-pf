@@ -4,7 +4,7 @@ linux:
     args: 'update -y'
   main:
     cmd: 'sudo apt-get'
-    args: 'install tmux -y'
+    args: 'install tmux xsel -y'
 mac:
   prehook:
     cmd: 'brew'
