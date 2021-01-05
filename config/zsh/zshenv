@@ -63,6 +63,8 @@ alias _cat="/bin/cat"
 alias b="cd ./../.."
 alias __ps='/bin/ps'
 
+alias tmux="tmux -2"
+
 if [ "$(uname | grep Linux)" ]; then
 	if [ -f /usr/bin/fdfind ]; then
 		alias fd="/usr/bin/fdfind"
