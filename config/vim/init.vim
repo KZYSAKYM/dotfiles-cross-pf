@@ -44,6 +44,8 @@ nnoremap k gk
 :command Tab4 call FnTab4()
 :command Tab8 call FnTab8()
 
+" ----------------------------- -----------------------------
+
 " Set default Tab4
 call FnTab4()
 
@@ -53,7 +55,6 @@ set incsearch
 set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap <silent> m, :Unite mark<CR>
 
 noremap gj gk
 noremap gk gj
@@ -68,16 +69,6 @@ noremap <C-a> gg V G
 " Using <C-c> also As <Esc>
 noremap <C-c> <Esc>
 noremap <C-c><C-c> <Esc>:
-
-" ranger-explorer
-nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
-nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
-nnoremap <silent><Leader>r :RangerCurrentDirectoryNewTab<CR>
-
-nnoremap <C-f> :Ranger<CR>
-
-" QuickRun
-nnoremap <C-r> :QuickRun<CR>
 
 " For Window
 "" Change WIndow with mouse
@@ -144,7 +135,7 @@ endif
 "End dein Scripts-------------------------
 
 " Plugin Setting
-:set tags=tags
+:set tags=./tags;
 
 " Change Tab setting per filetype
 augroup ftTab
