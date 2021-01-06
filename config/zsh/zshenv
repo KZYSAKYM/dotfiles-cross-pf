@@ -135,6 +135,8 @@ export CARGO_PATH=$HOME/.cargo/bin
 export PATH=$HOME/.local/bin:$CARGO_PATH:$GOPATH:$PATH
 source $HOME/.cargo/env
 
+[ -f $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh
+
 # Git
 
 export GIT_EDITOR='nvim'

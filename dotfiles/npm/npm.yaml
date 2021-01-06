@@ -1,10 +1,13 @@
 linux:
   prehook:
-    cmd: 'sudo apt-get'
-    args: 'update -y'
+    cmd: 'git'
+    args: ' clone git://github.com/creationix/nvm.git $HOME/.nvm'
   main:
-    cmd: 'sudo apt-get'
-    args: 'install nodejs npm -y'
+    cmd: '. $HOME/.nvm/nvm.sh'
+    args: '; nvm install --lts'
+  posthook:
+    cmd: 'echo'
+    args: '"[ -f $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh" >> $HOME/.bashrc'
 mac:
   prehook:
     cmd: 'brew'
