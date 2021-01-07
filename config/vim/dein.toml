@@ -54,7 +54,7 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-    nnoremap <C-g> :Rg<Space>
+    nnoremap rg :Rg<Space>
 '''
 
 [[plugins]]
