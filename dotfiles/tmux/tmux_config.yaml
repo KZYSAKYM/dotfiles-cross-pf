@@ -1,7 +1,13 @@
 linux:
+  prehook:
+    cmd: 'mkdir'
+    args: '$HOME/.config/tmux -p'
   main:
     cmd: 'cp'
-    args: '$CONF_DIR/tmux/tmux.conf $HOME/.tmux.conf'
+    args: '$CONF_DIR/tmux/* $HOME/.config/tmux/'
+  posthook:
+    cmd: 'ln'
+    args: '-fs $HOME/.config/tmux/tmux.conf $HOME/.tmux.conf'
 mac:
   main:
     cmd: 'cp'
