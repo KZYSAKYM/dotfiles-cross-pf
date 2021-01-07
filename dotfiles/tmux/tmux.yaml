@@ -3,8 +3,8 @@ linux:
     cmd: 'mkdir'
     args: '$HOME/.local/bin -p'
   main:
-    cmd: 'wget -P $HOME/.local/bin'
-    args: 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage'
+    cmd: 'wget -P $HOME/.local/bin/tmux.appimage'
+    args: 'https://github.com/nelsonenzo/tmux-appimage/releases/download/tmux3.1b/tmux-3.1b-x86_64.AppImage && chmod a+x $HOME/.local/bin/tmux.appimage'
   posthook:
     cmd: 'ln -s $HOME/.local/bin/tmux-3.1b-x86_64.AppImage $HOME/.local/bin/tmux'
     args: '; sudo apt-get update && sudo apt install xsel -y'

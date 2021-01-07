@@ -4,7 +4,7 @@ linux:
     args: '$HOME/.local/bin -p'
   main:
     cmd: 'wget'
-    args: '-P $HOME/.local/bin https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
+    args: '-P $HOME/.local/bin https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage && chmod a+x $HOME/.local/bin/nvim.appimage'
   posthook:
     cmd: 'sudo ln -fs'
     args: '$HOME/.local/bin/nvim.appimage /usr/bin/nvim'
