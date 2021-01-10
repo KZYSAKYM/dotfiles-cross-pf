@@ -63,8 +63,7 @@ noremap <C-k> <C-u>
 
 noremap <C-h> ^
 noremap <C-l> $
-noremap <C-s> :w<CR>
-noremap <C-a> gg V G
+nnoremap <C-a> gg V G
 
 " Using <C-c> also As <Esc>
 noremap <C-c> <Esc>
@@ -89,10 +88,11 @@ let g:DEIN_HOME=g:CACHE_HOME . '/dein'
 let g:DEIN_PATH=g:DEIN_HOME . '/repos/github.com/Shougo/dein.vim'
 let g:CONFIG_HOME=empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
 let g:NVIM_CONFIG_HOME=g:CONFIG_HOME . '/nvim'
+let g:VIM_CONFIG_HOME=g:CONFIG_HOME . '/vim'
 let g:DEIN_TOML_NVIM=g:NVIM_CONFIG_HOME . '/dein.toml'
-let g:DEIN_TOML_VIM=expand('$HOME') . '/dein.toml'
+let g:DEIN_TOML_VIM=g:VIM_CONFIG_HOME . '/dein.toml'
 let g:DEIN_TOML_LAZY_NVIM=g:NVIM_CONFIG_HOME . '/dein_lazy.toml'
-let g:DEIN_TOML_LAZY_VIM=expand('$HOME') . '/dein_lazy.toml'
+let g:DEIN_TOML_LAZY_VIM=g:VIM_CONFIG_HOME . '/dein_lazy.toml'
 if !has('nvim')
 	let g:DEIN_TOML=g:DEIN_TOML_VIM
 	let g:DEIN_TOML_LAZY=g:DEIN_TOML_LAZY_VIM
@@ -134,8 +134,12 @@ endif
 
 "End dein Scripts-------------------------
 
-" Plugin Setting
-:set tags=./tags;
+" ctags:
+"    C-] : jump definition
+"    C-t : return
+nnoremap <C-]> g<C-]>
+inoremap <C-]> <ESC>g<C-]>
+:set tags^=.git/tags,.svn/tags,./tags,*/.git/tags;~
 
 " Change Tab setting per filetype
 augroup ftTab
@@ -181,4 +185,9 @@ augroup ftTab
   autocmd BufNewFile,BufRead *.yaml   call FnTab2()
   autocmd BufNewFile,BufRead *.yml    call FnTab2()
   autocmd BufNewFile,BufRead *.toml   call FnTab2()
+  autocmd BufNewFile,BufRead Makefile call FnTab8()
+  autocmd BufNewFile,BufRead *.make   call FnTab8()
+  autocmd BufNewFile,BufRead Kconfig  call FnTab8()
+  autocmd BufNewFile,BufRead CMake*   call FnTab8()
+  autocmd BufNewFile,BufRead *.cmake  call FnTab8()
 augroup END

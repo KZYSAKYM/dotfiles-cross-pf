@@ -13,10 +13,21 @@ repo = 'tpope/vim-fugitive'
 
 # Color/Theme
 [[plugins]]
-repo = 'tomasr/molokai'
+repo = 'jacoborus/tender'
+hook_add = '''
+if (has("termguicolors"))
+  set termguicolors
+endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+syntax enable
+colorscheme tender
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline_theme = 'tender'
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -42,9 +53,6 @@ merged = 0
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
-    nnoremap <C-p> :GFiles<CR>
-    nnoremap <C-o> :History<CR>
-
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -54,7 +62,12 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-    nnoremap rg :Rg<Space>
+
+nnoremap rg :Rg<Space><CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-o> :History<CR>
+nnoremap <silent><Leader>b :Buffers<CR>
+nnoremap <silent><Leader>l :Lines<CR>
 '''
 
 [[plugins]]
@@ -67,11 +80,27 @@ let g:floaterm_keymap_toggle = '<Leader>t'
 let g:floaterm_gitcommit = 'split'
 '''
 
+# Ctags
+[[plugins]]
+repo = 'KZYSAKYM/auto-ctags.vim'
+hook_done_update = '''
+:! type ctags || sudo apt install exuberant-ctags
+'''
+hook_add = '''
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git', '.svc', '.']
+let g:auto_ctags_search_recursively = 1
+let g:auto_ctags_tags_args = ['--tag-relative=yes', '--recurse=yes', '--sort=yes']
+let g:auto_ctags_filetype_mode = 1
+let g:auto_ctags_set_tags_option = 1
+let g:auto_ctags_warn_once = 1
+'''
+
 # Language Server
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
-merged = '0'
+merged = 0
 hook_add = '''
 set hidden
 set nobackup
@@ -228,6 +257,11 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 '''
-# usage:
-#   CocInstall: install lsp server
 
+hook_post_update = '''
+:CocInstall coc-sh
+:CocInstall coc-cmake
+:CocInstall coc-flutter
+:CocInstall coc-toml
+:CocInstall coc-json
+'''
