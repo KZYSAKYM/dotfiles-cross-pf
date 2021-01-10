@@ -90,10 +90,20 @@ hook_add = '''
 let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git', '.svc', '.']
 let g:auto_ctags_search_recursively = 1
-let g:auto_ctags_tags_args = ['--tag-relative=yes', '--recurse=yes', '--sort=yes']
+let g:auto_ctags_tags_args = ['--tag-relative=yes', '--recurse=yes', '--sort=yes',
+  \ '--langmap=C:+.h.S']
 let g:auto_ctags_filetype_mode = 1
 let g:auto_ctags_set_tags_option = 1
 let g:auto_ctags_warn_once = 1
+let g:rooter_manual_only = 0
+'''
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = '''
+let g:rooter_patterns = ['.git', '.svn',
+  \ 'LISENCE*', 'MAINTAINERS*', 'README*',
+  \ 'build/', 'CMakeLists.txt', 'Makefile']
 '''
 
 # Language Server
@@ -153,10 +163,10 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <space>df  <Plug>(coc-definition)
+nmap <silent> <fpace>im  <Plug>(coc-implementation)
+nmap <silent> <space>rn  <Plug>(coc-rename)
+nmap <silent> <space>fmt <Plug>(coc-format)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -240,10 +250,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
@@ -254,8 +260,29 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" Open coc list.
+nnoremap <silent><nowait> <space><space>  :<C-u>CocList<CR>
+
+" coc-action: Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xnoremap <silent><nowait> <space>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nnoremap <silent><nowait> <space>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+" coc-yank
+nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
+
+" coc-explorer: https://www.npmjs.com/package/coc-explorer
+nmap <silent> <space>e :CocCommand explorer<CR>
+
+" coc-fzf-preview: https://www.npmjs.com/package/coc-fzf-preview
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>w  :<C-u>CocCommand fzf-preview.CocCurrentDiagnostics<CR>
+nnoremap <silent><nowait> <space>W  :<C-u>CocCommand fzf-preview.CocDiagnostics<CR>
+" Show reference
+nnoremap <silent><nowait> <space>rf  :<C-u>CocCommand fzf-preview.CocReferences<CR>
+nnoremap <silent><nowait> <space>ty  :<C-u>CocCommand fzf-preview.CocTypeDefinitions<CR>
 '''
 
 hook_post_update = '''
@@ -264,4 +291,24 @@ hook_post_update = '''
 :CocInstall coc-flutter
 :CocInstall coc-toml
 :CocInstall coc-json
+:CocInstall coc-lists
+:CocInstall coc-python
+:CocInstall coc-lua
+:CocInstall coc-go
+:CocInstall coc-rls
+:CocInstall coc-stylelint
+:CocInstall coc-spell-checker
+:CocInstall coc-html
+:CocInstall coc-css
+:CocInstall coc-prettier
+:CocInstall coc-yank
+:CocInstall coc-snippets
+" coc-fzf-previewめっちゃ難しそう(https://www.npmjs.com/package/coc-fzf-preview)
+:CocInstall coc-fzf-preview
+:CocInstall coc-highlight
+:CocInstall coc-xml
+:CocInstall coc-actions
+:CocInstall coc-explorer
+:CocInstall coc-yaml
+:CocInstall coc-tag
 '''
