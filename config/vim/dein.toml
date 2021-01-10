@@ -64,8 +64,8 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap rg :Rg<Space><CR>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <C-o> :History<CR>
+nnoremap <silent><Leader>g :GFiles<CR>
+nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>l :Lines<CR>
 '''
