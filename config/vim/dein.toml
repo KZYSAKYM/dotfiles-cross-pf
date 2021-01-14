@@ -106,6 +106,26 @@ let g:rooter_patterns = ['.git', '.svn',
   \ 'build/', 'CMakeLists.txt', 'Makefile']
 '''
 
+# Auto format
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
+hook_add = '''
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_only_modified_lines = 1
+let g:strip_whitelines_at_eof = 1
+let g:show_spaces_that_precede_tabs = 1
+let g:better_whitespace_skip_empty_lines = 1
+" usage:
+"   :EnableWhitespace  --- enable whitespace highlighting
+"   :DisableWhitespace --- disable whitespace highlighting
+"   :ToggleWhitespace  --- toggle whitespace highlighting
+"   :StripWhitespacce  --- clean extra whitespace
+"   :EnableStripWhitespaceOnSave  --- enable strip whitespace on save
+"   :DisableStripWhitespaceOnSave --- disable strip whitespace on save
+"   :ToggleStripWhitespaceOnSave  --- toggle strip whitespace on save
+'''
+
 # Language Server
 [[plugins]]
 repo = 'neoclide/coc.nvim'
