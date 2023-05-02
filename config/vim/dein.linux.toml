@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'jacoborus/tender'
+hook_add = '''
+set background=dark
+if (has("termguicolors"))
+  set termguicolors
+endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+syntax enable
+colorscheme tender
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline_theme = 'tender'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#enabled = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'francoiscabrol/ranger.vim'
+hook_add = '''
+nnoremap <silent><Leader>c :RangerCurrentDirectory<CR>
+nnoremap <silent><Leader>r :RangerCurrentDirectoryNewTab<CR>
+'''

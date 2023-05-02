@@ -5,6 +5,7 @@ set noswapfile
 set autoread
 set hidden
 set showcmd
+set modeline
 
 set number
 set cursorline
@@ -56,8 +57,6 @@ set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-noremap gj gk
-noremap gk gj
 noremap <C-j> <C-d>
 noremap <C-k> <C-u>
 
@@ -71,9 +70,10 @@ noremap <C-c><C-c> <Esc>:
 
 " For Window
 "" Change WIndow with mouse
-:set mouse=n
+" :set mouse=n
+:set mouse=a
 if !has('nvim')
-	:set ttymouse=xterm2
+  :set ttymouse=xterm2
 endif
 
 set hlsearch
@@ -93,12 +93,28 @@ let g:DEIN_TOML_NVIM=g:NVIM_CONFIG_HOME . '/dein.toml'
 let g:DEIN_TOML_VIM=g:VIM_CONFIG_HOME . '/dein.toml'
 let g:DEIN_TOML_LAZY_NVIM=g:NVIM_CONFIG_HOME . '/dein_lazy.toml'
 let g:DEIN_TOML_LAZY_VIM=g:VIM_CONFIG_HOME . '/dein_lazy.toml'
+let g:DEIN_TOML_LINUX_NVIM=g:NVIM_CONFIG_HOME . '/dein.linux.toml'
+let g:DEIN_TOML_LINUX_VIM=g:VIM_CONFIG_HOME . '/dein.linux.toml'
+let g:DEIN_TOML_WIN_NVIM=g:NVIM_CONFIG_HOME . '/dein.windows.toml'
+let g:DEIN_TOML_WIN_VIM=g:VIM_CONFIG_HOME . '/dein.windows.toml'
+let g:DEIN_TOML_VSCODE_NVIM=g:NVIM_CONFIG_HOME . '/dein.vscode.toml'
+let g:DEIN_TOML_VSCODE_VIM=g:VIM_CONFIG_HOME . '/dein.vscode.toml'
+let g:DEIN_TOML_NOVSCODE_NVIM=g:NVIM_CONFIG_HOME . '/dein.novscode.toml'
+let g:DEIN_TOML_NOVSCODE_VIM=g:VIM_CONFIG_HOME . '/dein.novscode.toml'
 if !has('nvim')
 	let g:DEIN_TOML=g:DEIN_TOML_VIM
 	let g:DEIN_TOML_LAZY=g:DEIN_TOML_LAZY_VIM
+  let g:DEIN_TOML_LINUX=g:DEIN_TOML_LINUX_VIM
+  let g:DEIN_TOML_WIN=g:DEIN_TOML_WIN_VIM
+  let g:DEIN_TOML_VSCODE=g:DEIN_TOML_VSCODE_VIM
+  let g:DEIN_TOML_NOVSCODE=g:DEIN_TOML_VSCODE_VIM
 else
 	let g:DEIN_TOML=g:DEIN_TOML_NVIM
 	let g:DEIN_TOML_LAZY=g:DEIN_TOML_LAZY_NVIM
+  let g:DEIN_TOML_LINUX=g:DEIN_TOML_LINUX_NVIM
+  let g:DEIN_TOML_WIN=g:DEIN_TOML_WIN_NVIM
+  let g:DEIN_TOML_VSCODE=g:DEIN_TOML_VSCODE_NVIM
+  let g:DEIN_TOML_NOVSCODE=g:DEIN_TOML_VSCODE_NVIM
 endif
 
 if !isdirectory(g:DEIN_PATH)
@@ -114,6 +130,16 @@ if dein#load_state(g:DEIN_HOME)
 
   " Load TOML
   " Load Plugins when vim is launched
+  if has('unix') || has('mac')
+    call dein#load_toml(g:DEIN_TOML_LINUX, {'lazy': 0})
+  elseif has('win32') || has('win64')
+    call dein#load_toml(g:DEIN_TOML_WIN, {'lazy': 0})
+  endif
+  if exists('vscode')
+    call dein#load_toml(g:DEIN_TOML_VSCODE, {'lazy': 0})
+  else
+    call dein#load_toml(g:DEIN_TOML_NOVSCODE, {'lazy': 0})
+  endif
   call dein#load_toml(g:DEIN_TOML, {'lazy': 0})
   " Load Plugins after vim is launched
   call dein#load_toml(g:DEIN_TOML_LAZY, {'lazy': 1})
@@ -146,10 +172,10 @@ augroup ftTab
   autocmd!
   " C like Lang
   autocmd BufNewFile,BufRead *.c      call FnTab8()
-  autocmd BufNewFile,BufRead *.cpp    call FnTab8()
+  autocmd BufNewFile,BufRead *.cpp    call FnTab2()
   autocmd BufNewFile,BufRead *.h      call FnTab8()
-  autocmd BufNewFile,BufRead *.hpp    call FnTab8()
-  autocmd BufNewFile,BufRead *.cc     call FnTab8()
+  autocmd BufNewFile,BufRead *.hpp    call FnTab2()
+  autocmd BufNewFile,BufRead *.cc     call FnTab2()
   " Other Programing Lang
   autocmd BufNewFile,BufRead *.py     call FnTab4()
   autocmd BufNewFile,BufRead *.rb     call FnTab4()
@@ -162,6 +188,13 @@ augroup ftTab
   autocmd BufNewFile,BufRead *.vim    call FnTab2()
   autocmd BufNewFile,BufRead *.ps1    call FnTab2()
   autocmd BufNewFile,BufRead *.bat    call FnTab2()
+  " bitbake
+  autocmd BufNewFile,BufRead *.bb         call FnTab4()
+  autocmd BufNewFile,BufRead *.bbappend   call FnTab4()
+  autocmd BufNewFile,BufRead *.bbclass    call FnTab4()
+  autocmd BufNewFile,BufRead *.inc        call FnTab4()
+  autocmd BufNewFile,BufRead *.cfg        call FnTab4()
+  autocmd BufNewFile,BufRead *.conf       call FnTab4()
   " Web Lang
   autocmd BufNewFile,BufRead *.js     call FnTab2()
   autocmd BufNewFile,BufRead *.jsx    call FnTab2()
@@ -188,6 +221,11 @@ augroup ftTab
   autocmd BufNewFile,BufRead Makefile call FnTab8()
   autocmd BufNewFile,BufRead *.make   call FnTab8()
   autocmd BufNewFile,BufRead Kconfig  call FnTab8()
-  autocmd BufNewFile,BufRead CMake*   call FnTab8()
-  autocmd BufNewFile,BufRead *.cmake  call FnTab8()
+  autocmd BufNewFile,BufRead CMake*   call FnTab4()
+  autocmd BufNewFile,BufRead *.cmake  call FnTab4()
 augroup END
+
+if exists('g:nvui')
+        autocmd InsertEnter * NvuiIMEEnable
+        autocmd InsertLeave * NvuiIMEDisable
+endif

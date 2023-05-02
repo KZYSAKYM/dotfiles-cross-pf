@@ -8,40 +8,16 @@ repo = 'mattn/vim-sonictemplate'
 # :Template
 
 # Git
-[[plugins]]
-repo = 'tpope/vim-fugitive'
+# See dein.novscode.toml
 
 # Color/Theme
-[[plugins]]
-repo = 'jacoborus/tender'
-hook_add = '''
-if (has("termguicolors"))
-  set termguicolors
-endif
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-syntax enable
-colorscheme tender
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-let g:airline_theme = 'tender'
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+# See dein.windows.toml and dein.linux.toml
 
 # Ranger
+# blose.vim is the dependency of ranger.vim
 [[plugins]]
 repo = 'rbgrouleff/bclose.vim'
-
-[[plugins]]
-repo = 'francoiscabrol/ranger.vim'
-hook_add = '''
-nnoremap <silent><Leader>c :RangerCurrentDirectory<CR>
-nnoremap <silent><Leader>r :RangerCurrentDirectoryNewTab<CR>
-'''
+# See dein.linux.toml
 
 # fzf
 [[plugins]]
@@ -82,13 +58,13 @@ let g:floaterm_gitcommit = 'split'
 
 # Ctags
 [[plugins]]
-repo = 'KZYSAKYM/auto-ctags.vim'
+repo = 'soramugi/auto-ctags.vim'
 hook_done_update = '''
 :! type ctags || sudo apt install exuberant-ctags
 '''
 hook_add = '''
 let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git', '.svc', '.']
+let g:auto_ctags_directory_list = ['.git', '.svc', '~/.cache/ctags']
 let g:auto_ctags_search_recursively = 1
 let g:auto_ctags_tags_args = ['--tag-relative=yes', '--recurse=yes', '--sort=yes',
   \ '--langmap=C:+.h.S']
@@ -126,6 +102,9 @@ let g:better_whitespace_skip_empty_lines = 1
 "   :ToggleStripWhitespaceOnSave  --- toggle strip whitespace on save
 '''
 
+[[plugins]]
+repo = 'kergoth/vim-bitbake'
+
 # Language Server
 [[plugins]]
 repo = 'neoclide/coc.nvim'
@@ -151,6 +130,11 @@ else
   set signcolumn=yes
 endif
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -159,11 +143,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -181,6 +160,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> <space>d :CocDiagnostics<CR>
 
 " GoTo code navigation.
 nmap <silent> <space>df  <Plug>(coc-definition)
@@ -267,7 +247,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show commands.
@@ -303,6 +283,26 @@ nnoremap <silent><nowait> <space>W  :<C-u>CocCommand fzf-preview.CocDiagnostics<
 " Show reference
 nnoremap <silent><nowait> <space>rf  :<C-u>CocCommand fzf-preview.CocReferences<CR>
 nnoremap <silent><nowait> <space>ty  :<C-u>CocCommand fzf-preview.CocTypeDefinitions<CR>
+
+if has('win32') || has('win64')
+
+" Intead of ranger.vim
+
+:function OpenExplorerOnPWD()
+:  let g:pwd = expand('%:p:h')
+:  execute 'CocCommand explorer ' . g:pwd
+:endfunction
+
+:function OpenExplorerOnPWDOnTabNew()
+:  let g:pwd = expand('%:p:h')
+:  tabnew
+:  execute 'CocCommand explorer ' . g:pwd
+:endfunction
+
+nnoremap <silent><Leader>c :call OpenExplorerOnPWD()<CR>
+nnoremap <silent><Leader>r :call OpenExplorerOnPWDOnTabNew()<CR>
+
+endif
 '''
 
 hook_post_update = '''
@@ -331,4 +331,5 @@ hook_post_update = '''
 :CocInstall coc-explorer
 :CocInstall coc-yaml
 :CocInstall coc-tag
+:CocInstall coc-esbonio
 '''
