@@ -97,24 +97,16 @@ let g:DEIN_TOML_LINUX_NVIM=g:NVIM_CONFIG_HOME . '/dein.linux.toml'
 let g:DEIN_TOML_LINUX_VIM=g:VIM_CONFIG_HOME . '/dein.linux.toml'
 let g:DEIN_TOML_WIN_NVIM=g:NVIM_CONFIG_HOME . '/dein.windows.toml'
 let g:DEIN_TOML_WIN_VIM=g:VIM_CONFIG_HOME . '/dein.windows.toml'
-let g:DEIN_TOML_VSCODE_NVIM=g:NVIM_CONFIG_HOME . '/dein.vscode.toml'
-let g:DEIN_TOML_VSCODE_VIM=g:VIM_CONFIG_HOME . '/dein.vscode.toml'
-let g:DEIN_TOML_NOVSCODE_NVIM=g:NVIM_CONFIG_HOME . '/dein.novscode.toml'
-let g:DEIN_TOML_NOVSCODE_VIM=g:VIM_CONFIG_HOME . '/dein.novscode.toml'
 if !has('nvim')
 	let g:DEIN_TOML=g:DEIN_TOML_VIM
 	let g:DEIN_TOML_LAZY=g:DEIN_TOML_LAZY_VIM
   let g:DEIN_TOML_LINUX=g:DEIN_TOML_LINUX_VIM
   let g:DEIN_TOML_WIN=g:DEIN_TOML_WIN_VIM
-  let g:DEIN_TOML_VSCODE=g:DEIN_TOML_VSCODE_VIM
-  let g:DEIN_TOML_NOVSCODE=g:DEIN_TOML_VSCODE_VIM
 else
 	let g:DEIN_TOML=g:DEIN_TOML_NVIM
 	let g:DEIN_TOML_LAZY=g:DEIN_TOML_LAZY_NVIM
   let g:DEIN_TOML_LINUX=g:DEIN_TOML_LINUX_NVIM
   let g:DEIN_TOML_WIN=g:DEIN_TOML_WIN_NVIM
-  let g:DEIN_TOML_VSCODE=g:DEIN_TOML_VSCODE_NVIM
-  let g:DEIN_TOML_NOVSCODE=g:DEIN_TOML_VSCODE_NVIM
 endif
 
 if !isdirectory(g:DEIN_PATH)
@@ -130,19 +122,19 @@ if dein#load_state(g:DEIN_HOME)
 
   " Load TOML
   " Load Plugins when vim is launched
-  if has('unix') || has('mac')
-    call dein#load_toml(g:DEIN_TOML_LINUX, {'lazy': 0})
-  elseif has('win32') || has('win64')
-    call dein#load_toml(g:DEIN_TOML_WIN, {'lazy': 0})
+  if !exists('vscode')
+
+    if has('unix') || has('mac')
+      call dein#load_toml(g:DEIN_TOML_LINUX, {'lazy': 0})
+    elseif has('win32') || has('win64')
+      call dein#load_toml(g:DEIN_TOML_WIN, {'lazy': 0})
+    endif
+
+    call dein#load_toml(g:DEIN_TOML, {'lazy': 0})
+    " Load Plugins after vim is launched
+    call dein#load_toml(g:DEIN_TOML_LAZY, {'lazy': 1})
+
   endif
-  if exists('vscode')
-    call dein#load_toml(g:DEIN_TOML_VSCODE, {'lazy': 0})
-  else
-    call dein#load_toml(g:DEIN_TOML_NOVSCODE, {'lazy': 0})
-  endif
-  call dein#load_toml(g:DEIN_TOML, {'lazy': 0})
-  " Load Plugins after vim is launched
-  call dein#load_toml(g:DEIN_TOML_LAZY, {'lazy': 1})
 
   " Required:
   call dein#end()
